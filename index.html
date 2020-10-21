@@ -47,18 +47,18 @@ var star = "Солнца";
 // Подумайте, с какой строкой и в каком порядке нужно склеивать переменные, чтобы получить такой двустрочный вывод тела письма.
 // Помните, что можно создать строку, которая содержит только управляющую последовательность \n.
 
-   var greeting = "Hello,";
+   /*var greeting = "Hello,";
    var firstName = "Joffrey";
    var intro = "Here is important information about your account security.";
    var info = "We couldn't verify your mother's maiden name.";
 
    console.log("intro", intro, "info", info);
 
-   document.write(greeting + " " + firstName + "! <br \/> <br \/>" + intro + "<br \/>" + info + "<br \/>" + "<br \/>" + "<br \/>");
+   document.write(greeting + " " + firstName + "! <br \/> <br \/>" + intro + "<br \/>" + info + "<br \/>" + "<br \/>" + "<br \/>");*/
 
    // document.write(greeting + " " + firstName + "! \n" + intro + "\n" + info + "\n");
 
-   console.log(greeting + " " + firstName + "! \n" + intro + " \n" + info + " \n");
+   /*console.log(greeting + " " + firstName + "! \n" + intro + " \n" + info + " \n");*/
 
    //  \n этот вариант не работает почему-то
 
@@ -73,11 +73,11 @@ var star = "Солнца";
 
    //А затем с помощью метода document.write() выведите на экран пять строк, где каждая строка - это название страны и численность ее населения.
 
-   var country = ["Ukraine", "Germany", "France", "Italy", "Spain", "USA", "China"];
+   /*var country = ["Ukraine", "Germany", "France", "Italy", "Spain", "USA", "China"];
    var population = [41, 83, 67, 60, 47, 328, 1393, 144];
    var units = "million people"
 
-   document.write("Task #1" + "<br\/>" + "<br\/>" + country[0] + " - " + population[0] + " " + units + "<br \/>" + country[1] + " - " + population[1] + " " + units + "<br \/>" + country[2] + " - " + population[2] + " " + units + "<br \/>" + country[3] + " - " + population[3] + " " + units + "<br \/>" + country[4] + " - " + population[4] + " " + units + "<br \/>" + country[5] + " - " + population[5] + " " + units + "<br \/>" + country[6] + " - " + population[6] + " " + units + "<br \/>" + "<br \/>");
+   document.write("Task #1" + "<br\/>" + "<br\/>" + country[0] + " - " + population[0] + " " + units + "<br \/>" + country[1] + " - " + population[1] + " " + units + "<br \/>" + country[2] + " - " + population[2] + " " + units + "<br \/>" + country[3] + " - " + population[3] + " " + units + "<br \/>" + country[4] + " - " + population[4] + " " + units + "<br \/>" + country[5] + " - " + population[5] + " " + units + "<br \/>" + country[6] + " - " + population[6] + " " + units + "<br \/>" + "<br \/>");*/
 
 
    //#2.
@@ -88,7 +88,7 @@ var star = "Солнца";
    //5. С помощью методов, изученных в предыдущем уроке,  удалите  из массива последний и первый элемент.
    //6. Выведите на экран, сколько на данный момент у вас фруктов в  массиве.
 
-   var fruits = ["orange", "banana", "pear"];
+   /*var fruits = ["orange", "banana", "pear"];
    document.write("Task #2" + "<br\/>" + "<br\/>" + fruits[0] + ", " + fruits[1] + ", " + fruits[2] + " - " + fruits.length + " fruits" + "<br\/>" +  "<br\/>");
    fruits.splice(0, 0, "grapefruit");
    fruits.splice(4, 0, "apple", "pine-apple");
@@ -96,7 +96,7 @@ var star = "Солнца";
    fruits.pop();
    //document.write(fruits + " - " + fruits.length + " fruits" + "<br \/>" + "<br \/>");
    fruits.shift();
-   document.write(fruits + " - " + fruits.length + " fruits" + "<br \/>" + "<br \/>");
+   document.write(fruits + " - " + fruits.length + " fruits" + "<br \/>" + "<br \/>");*/
 
 
    //#3.
@@ -113,7 +113,7 @@ var star = "Солнца";
    //В этом массиве у Вас мандарин должен будет замениться на ананас.
 
 
-   var fruits = ["яблоко", "апельсин", "груша", "гранат"];
+   /*var fruits = ["яблоко", "апельсин", "груша", "гранат"];
    document.write("Task #3" + "<br\/>" + "<br\/>" + fruits + "<br\/>" + "<br\/>");
    fruits.reverse();
    fruits.splice(1, 1, "ананас");
@@ -125,10 +125,199 @@ var star = "Солнца";
    fruits.reverse();
    fruits.splice(1, 1, "ананас");
    fruits.reverse();
-   document.write(fruits + "<br\/>" + "<br\/>");
+   document.write(fruits + "<br\/>" + "<br\/>");*/
 
 
+   // ------------------------------------------Лекция 8. If, If else и модальные окна, текст заданий закомментирован //, мой код /*   */------
+
+   //Task #1
+   //var students = ["Сергей", "Матвей", "Лейла", "Алина",  "Иоган"];
+
+// Напишите условие, которое проверяет, если количество элементов в массиве больше или  равно 3, то выводится сообщение о том, что это большой массив, в котором как минимум 3  элемента.
+// А иначе, выведите на экран сообщение о том, что это маленький массив, в  котором менее 3-х элементов.
+
+
+   document.write("Лекция 8 If, If else и модальные окна" + "<br\/>" + "<br\/>" + "Task #1" + "<br\/>" + "<br\/>" );
+
+   var students = ["Сергей", "Матвей", "Лейла", "Алина",  "Иоган"];
+   if(students.length >= 3) {
+      document.write("a big massive with 3 or more elements"+ "<br\/>" + "<br\/>");
+   } else {
+      document.write("a small massive with less than 3 elements" + "<br\/>" + "<br\/>");
+   }
+
+   (students.length < 3) ? document.write("a small massive with less than 3 elements"+ "<br\/>" + "<br\/>") : document.write("a big massive with 3 or more elements"+ "<br\/>" + "<br\/>");
+
+//Task #1a
+
+//    Написать код, который бы спрашивал у пользователя  сколько ему лет.
+
+// Вы должны  проанализировать полученный ответ, и если человеку больше 20 лет, то вам нужно вывести на экран  фразу "Вы уже взрослый человек!", а если меньше 20 или равно 20, то вывести "Вы еще молоды, у Вас  все впереди!".
+
+/*document.write("Task #1a"+ "<br\/>" + "<br\/>");
+var age = prompt("Сколько вам лет?","");
+console.log(typeof age);
+if (age <= 20){
+    document.write("Вы еще молоды, у Вас  все впереди!" + "<br\/>" + "<br\/>");
+}
+else {
+    document.write("Вы уже взрослый человек!" + "<br\/>" + "<br\/>");
+}*/
+
+//Task #2
+// У Вас есть массив:  
+
+// var students = ["Дмитрий", "Алексей", "Петр", "Виктор"];
+
+// Вам нужно написать условие, что, если длина этого массива равна 4 и последним элементом является "Виктор", то вывести на экран сообщение "Этот массив мне подходит", а иначе вывести на экран, что массив вам не подходит.
+
+document.write("Task #2"+ "<br\/>" + "<br\/>");
+
+var students = ["Дмитрий", "Алексей", "Петр", "Виктор"];
+if(students.length === 4 && students[3] === "Виктор"){
+   document.write("Этот массив мне подходит" + "<br\/>" + "<br\/>");
+}
+else {
+   document.write("Этот массив мне не подходит" + "<br\/>" + "<br\/>");
+}
+
+
+//Task #3
+// Напишите множественное условие для действий при различных сигналах светофора.
+// Если сигнал красный, то надо стоять, иначе, если желтый, то надо приготовиться, а иначе, можно идти.
+
+// используя ‘?’
+
+
+document.write("Task #3" + "<br\/>" + "<br\/>");
+
+var trafficlight = ["red", "yellow", "green", "off"];
+
+var message = ["stop", "prepare", "go", "светофор не работает"];
+
+(trafficlight[0]) ? message[0] : (trafficlight[1]) ? message[1] : (trafficlight[2]) ? message[2] : message[3];
+
+
+document.write(trafficlight[0] + " - " + message[0] + "<br\/" + trafficlight[1] + " - " + message[1] + "<br\/" + trafficlight[2] + " - " + message[2] + "<br\/" + trafficlight[3] + " - " + message[3] + "<br\/");
+
+
+//console.log(trafficlight[0] + " " + message + "<br\/>" + trafficlight[1] + " " + message + "<br\/>" + trafficlight[2] + " " + message + "<br\/>" +trafficlight[3] + " " + message + "<br\/>" + "<br\/>" + "<br\/>");
+
+
+
+
+//Task #4
+// Перепишите if..else с использованием нескольких операторов '?'.
+// Для читаемости – оформляйте код в несколько строк.
+
+// var message;
+
+// if (login == 'Вася') {
+//   message = 'Привет';
+// } else if (login == 'Директор') {
+//   message = 'Здравствуйте';
+// } else if (login == '') {
+//   message = 'Нет логина';
+// } else {
+//   message = '';
+// }
+
+document.write("Task #4" + "<br\/>" + "<br\/>");
+
+ /*var login = prompt ("enter your login");
+ var message;
+ (login === "Vasya") ? document.write(message = "Privet! " + "<br\/>" + "<br\/>") :
+ (login === "Director") ? document.write(message = "Zdravstvuite! " + "<br\/>" + "<br\/>") :
+ (login === " ") ? document.write(message = "this is not a login" + "<br\/>" + "<br\/>"):
+ " ";*/
      
+
+//Task #5
+
+//    Напишите код, который будет спрашивать логин (prompt).
+
+// Если посетитель вводит «Админ», то спрашивать пароль, если нажал отмена (escape) – выводить «Вход отменён», если вводит что-то другое – «Я вас не знаю».
+
+// Пароль проверять так. Если введен пароль «Чёрный Властелин», то выводить «Добро пожаловать!», иначе – «Пароль неверен», при отмене – «Вход отменён».
+
+// Блок-схема:
+
+
+document.write("Task #5" + "<br\/>" + "<br\/>");  
+
+
+  
+// Вариант 1 с знаком ?, не получился почему-то
+/*
+  var UserLogin=prompt("Кто пришел?","");
+  (UserLogin===null) ? prompt("Вход отменён") :
+  
+  (UserLogin==="Админ") ? 
+
+   
+     { 
+     var UserPassword =prompt("Введите Ваш пароль");
+       (UserPassword===null) ? prompt("Вход отменен") :
+     (UserPassword==="Чёрный Властелин") ? alert("Добро пожаловать!") :
+       prompt("Пароль неверен"); 
+       }
+     :
+
+    prompt("Я вас не знаю");
+*/
+    
+
+// Вариант 2 с if, получился, но если первый раз всместо Админ вводишь Собака, все срабатывает,т.е. пишет Я вас не знаю , но когда на том же месте повторно пишешь Собака, уже пропускает спокойно, ничего больше не спрашивая. Наверное, думает, что уже с собакой познакомился :)
+/*
+var UserLogin=prompt("Кто пришел?","");
+ if(UserLogin===null) prompt("Вход отменен");
+
+ 
+     else if (UserLogin==="Админ")
+     {
+      var UserPassword=prompt("Введите Ваш пароль");
+      if(UserPassword==="Черный Властелин") alert("Добро пожаловать!");
+      else if (UserPassword===null) prompt("Вход отменен");
+      else prompt("Пароль неверен!");
+     }
+
+     else prompt("Я вас не знаю!");*/
+
+//Task #6
+// Используя конструкцию ?, напишите код, который будет спрашивать: «Каково «официальное» название JavaScript?».
+
+// Если посетитель вводит «ECMAScript», то выводить «Верно!», если что-то другое – выводить «Не знаете? «ECMAScript»!».
+
+// Блок-схема:
+
+
+document.write("Task #6" + "<br\/>" + "<br\/>"); 
+/*
+var Question = prompt("Каково «официальное» название JavaScript?","");
+(Question==="ECMAScript") ? alert("Верно!") :
+       alert("Не знаете? «ECMAScript»!"); 
+*/
+
+//Task #7
+
+// Перепишите if с использованием оператора '?':
+
+// a=1;
+// b=8;
+
+// if (a + b < 4) {
+//   result = 'Мало';
+// } else {
+//   result = 'Много';
+// }
+// document.write(result);
+
+document.write("Task #7" + "<br\/>" + "<br\/>"); 
+var a = 1;
+var b = 8;
+(a + b < 4) ? result ="Мало" :
+result ="Много";
+document.write(result);
 
 	</script>
 
