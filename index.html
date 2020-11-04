@@ -20,14 +20,14 @@
 // "Мы живем на планете Земля, она делает один оборот вокруг Солнца за 365 дней. Население нашей планеты составляет примерно 7 млрд. человек."
 
 
-var days = 365;
+/*var days = 365;
 var planet = "Земля";
 var population = "7 млрд.";
 var star = "Солнца";
 
-// console.log("planet", planet, "days", days, "star", star);
+console.log("planet", planet, "days", days, "star", star);
 
-// document.write("Мы живем на планете " + planet + ", она делает один оборот вокруг " + star + " за " + days + " дней. Население нашей планеты составляет примерно " + population + " человек. "); 
+document.write("Мы живем на планете " + planet + ", она делает один оборот вокруг " + star + " за " + days + " дней. Население нашей планеты составляет примерно " + population + " человек. "); */
 
 
 
@@ -64,6 +64,8 @@ var star = "Солнца";
 
    // <br \/> а этот почему-то работает
 
+
+// ------------------------------------------Лекция 7. Массивы текст заданий закомментирован //, мой код /*   */------
    //ДЗ 15 октября 2020
 
    //# 1.
@@ -137,7 +139,8 @@ var star = "Солнца";
 // А иначе, выведите на экран сообщение о том, что это маленький массив, в  котором менее 3-х элементов.
 
 
-   document.write("Лекция 8 If, If else и модальные окна" + "<br\/>" + "<br\/>" + "Task #1" + "<br\/>" + "<br\/>" );
+  /* 
+  document.write("Лекция 8 If, If else и модальные окна" + "<br\/>" + "<br\/>" + "Task #1" + "<br\/>" + "<br\/>" );
 
    var students = ["Сергей", "Матвей", "Лейла", "Алина",  "Иоган"];
    if(students.length >= 3) {
@@ -147,6 +150,7 @@ var star = "Солнца";
    }
 
   document.write(students.length < 3 ? "a small massive with less than 3 elements"+ "<br\/>" + "<br\/>" : "a big massive with 3 or more elements"+ "<br\/>" + "<br\/>");
+*/
 
 //Task #1a
 
@@ -170,7 +174,7 @@ else {
 // var students = ["Дмитрий", "Алексей", "Петр", "Виктор"];
 
 // Вам нужно написать условие, что, если длина этого массива равна 4 и последним элементом является "Виктор", то вывести на экран сообщение "Этот массив мне подходит", а иначе вывести на экран, что массив вам не подходит.
-
+/*
 document.write("Task #2"+ "<br\/>" + "<br\/>");
 
 var students = ["Дмитрий", "Алексей", "Петр", "Виктор"];
@@ -180,15 +184,16 @@ if(students.length === 4 && students[3] === "Виктор"){
 else {
    document.write("Этот массив мне не подходит" + "<br\/>" + "<br\/>");
 }
-
+*/
 
 //Task #3
 // Напишите множественное условие для действий при различных сигналах светофора.
 // Если сигнал красный, то надо стоять, иначе, если желтый, то надо приготовиться, а иначе, можно идти.
 
 // используя ‘?’
+ //THIS TASK IS STILL NOT SLOLVED
 
-
+/*
 document.write("Task #3" + "<br\/>" + "<br\/>");
 
 var trafficlight = ["red", "yellow", "green", "off"];
@@ -203,7 +208,7 @@ document.write(trafficlight[0] + " - " + message[0] + "<br\/" + trafficlight[1] 
 
 //console.log(trafficlight[0] + " " + message + "<br\/>" + trafficlight[1] + " " + message + "<br\/>" + trafficlight[2] + " " + message + "<br\/>" +trafficlight[3] + " " + message + "<br\/>" + "<br\/>" + "<br\/>");
 
-
+*/
 
 
 //Task #4
@@ -222,9 +227,10 @@ document.write(trafficlight[0] + " - " + message[0] + "<br\/" + trafficlight[1] 
 //   message = '';
 // }
 
+/*
 document.write("Task #4" + "<br\/>" + "<br\/>");
 
- /*var login = prompt ("enter your login");
+ var login = prompt ("enter your login");
  var message;
  (login === "Vasya") ? document.write(message = "Privet! " + "<br\/>" + "<br\/>") :
  (login === "Director") ? document.write(message = "Zdravstvuite! " + "<br\/>" + "<br\/>") :
@@ -243,7 +249,7 @@ document.write("Task #4" + "<br\/>" + "<br\/>");
 // Блок-схема:
 
 
-document.write("Task #5" + "<br\/>" + "<br\/>");  
+/*document.write("Task #5" + "<br\/>" + "<br\/>");  */
 
 
   
@@ -290,9 +296,9 @@ var UserLogin=prompt("Кто пришел?","");
 
 // Блок-схема:
 
-
-document.write("Task #6" + "<br\/>" + "<br\/>"); 
 /*
+document.write("Task #6" + "<br\/>" + "<br\/>"); 
+
 var Question = prompt("Каково «официальное» название JavaScript?","");
 (Question==="ECMAScript") ? alert("Верно!") :
        alert("Не знаете? «ECMAScript»!"); 
@@ -312,13 +318,16 @@ var Question = prompt("Каково «официальное» название 
 // }
 // document.write(result);
 
+/*
 document.write("Task #7" + "<br\/>" + "<br\/>"); 
 var a = 1;
 var b = 8;
 (a + b < 4) ? result ="Мало" :
 result ="Много";
 document.write(result + "<br\/>" + "<br\/>");
+*/
 
+/*
 var sheepCounted = 0;
 while (sheepCounted < 10) {
    document.write ("I have counted " + sheepCounted + " sheep! " + "<br\/>");
@@ -332,9 +341,9 @@ while (sheepCounted < 10) {
       document.write ("I have counted " + catCounted + " cats! " + "<br\/>" + "<br\/>");
    }
 
-
+*/
   // ------------------------------------------Лекция 9. Циклы while, for, Цикл do…while, текст заданий закомментирован //, мой код /*   */------
-document.write ("Циклы while, for, Цикл do…while " + "<br\/>" + "<br\/>");
+//document.write ("Лекция 9. Циклы while, for, Цикл do…while " + "<br\/>" + "<br\/>");
 //Task 1
 // Написать цикл для вывода квадратов всех чисел от 1 до 7.
 
@@ -347,22 +356,22 @@ document.write ("Циклы while, for, Цикл do…while " + "<br\/>" + "<br\
 // Квадрат 6 = 36
 // Квадрат 7 = 49
 // Используйте цикл for
-
+/*
 document.write ("Task 1" + "<br\/>" + "<br\/>");
 
-var x = 0;
-for (x = 0; x <= 7; x++) {
+
+for (var x = 0; x <= 7; x++) {
    document.write ("Квадрат " + x + " = " + x*x + "<br\/>" + "<br\/>"); 
 }
 
-
+*/
 //Task 2
 // Замените for на while
 
 // for (var i = 0; i < 3; i++) {
 //   alert( "номер " + i + "!" );
 // }
-
+/*
 document.write ("Task 2" + "<br\/>" + "<br\/>");
 
 var i = 0;
@@ -371,7 +380,7 @@ while (i < 3) {
    i++;
 }  
 
-
+*/
 //Task 3
 // Есть массив студентов:
 
@@ -379,25 +388,42 @@ while (i < 3) {
 
 // С помощью цикла while  вам нужно вывести на экран всех студентов начиная с Гагарина Матвея и заканчивая Петравкиным Алексеем. При условии, что мы видим массив и знаем, как расположены студенты в массиве.
 
+/*
 document.write ("Task 3" + "<br\/>" + "<br\/>");
 
 var students2 = ['Абаканов Сергей', 'Алалина Алина', 'Гагарин Матвей', 'Хантухова Лейла', 'Викторов Сергей',  'Масалкин Андрей', 'Петравкин Алексей', 'Московин Павел', 'Данилов Станислав'];
 
-var i = 2;
+console.log(students2.indexOf('Гагарин Матвей'), students2.indexOf('Петравкин Алексей'));
 
-while (i <= 6) {
-   document.write (students2[i] + "<br\/>");
+var i = students2.indexOf('Гагарин Матвей');
+var k = students2.indexOf('Петравкин Алексей');
+
+while (i <= k) {
+   document.write(students2[i] + "<br\/>");
    i++;
 }
 
-document.write ("<br\/>");
+document.write("<br\/>");
 
-for (i = 2; i <= 6; i++) {
-   document.write (students2[i] + ", ");
+for (i = students2.indexOf('Гагарин Матвей'); i <= k; i++) {
+   document.write(students2[i] + ", ");
 }
+*/
+//Task 4
+
+// Напишите цикл, который предлагает prompt ввести число, большее 100. Если посетитель ввел другое число – попросить ввести ещё раз, и так далее.
+
+// Цикл должен спрашивать число пока либо посетитель не введет число, большее 100, либо не нажмет кнопку Cancel (ESC).
+
+
+/*do {
+   var pass = prompt("Enter a number", "");
+} while (pass <= 100);*/
+   
+
 
 //_________ЗАДАЧА ПРО ЧЕРНОГО ВЛАСТЕЛИНА, написать код с помощью циклов, чтобы все допуски и запреты срабатывали каждый раз как надо при любых вводах
-
+//__Доп. задание: нужно чтобы логин в любых регистрах принимало (хоть большими хоть маленькими)
 
 //________________________ СТАРЫЙ КОД, срабатывает 1 раз____________________________________
 
@@ -418,7 +444,23 @@ for (i = 2; i <= 6; i++) {
 
      //Этот код пока что работает:
 
-   /*var userLogin=prompt("Кто пришел?","");
+  /* var userLogin=prompt("Кто пришел?","");
+   //var userPassword=prompt("Введите Ваш пароль", "");
+   //var userCancel=prompt("Вход отменен", "");
+
+   while (userLogin===null) {
+      alert("Вход отменен"); 
+      userLogin=prompt("Кто пришел?","");
+   }
+
+   if (userLogin==="Админ") {
+      var userPassword=prompt("Введите ваш пароль", "");
+   }
+
+   if (userPassword==="Черный Властелин") alert("Добро пожаловать!");
+   */
+
+  /*var userLogin=prompt("Кто пришел?","");
    //var userPassword=prompt("Введите Ваш пароль", "");
    //var userCancel=prompt("Вход отменен", "");
 
@@ -428,9 +470,12 @@ for (i = 2; i <= 6; i++) {
 
    if (userLogin==="Админ") {
       var userPassword=prompt("Введите ваш пароль", "");
-   }
+      if(userPassword==="Черный Властелин") alert("Добро пожаловать!");
+      else if while (userPassword===null) prompt("Вход отменен");
+   }*/
 
-   if (userPassword==="Черный Властелин") alert("Добро пожаловать!");*/
+   
+
 
 
    
@@ -455,9 +500,307 @@ for (i = 2; i <= 6; i++) {
       prompt("Вход отменен", "");
       }*/
       
+   //Домашнее задание (массивы -  функции)
+// Задание 1
+// Написать функцию которая первым принимает значение, которым заполнять массив, а вторым - сколько элементов должно быть в массиве. Пример: arrayFill('x', 5) сделает массив ['x', 'x', 'x', 'x', 'x'].
+
+console.log("Задание 1");
+
+/* Этот код работает*/
+
+var array = [];
+var x = "x";
+var i = 0;
+
+function arrayFill(x, i)
+{
+   for (i = 1; i <= 5; i++) {
+      array.push(x);
+   }
    
+   return array;
+}
+
+console.log(arrayFill(x, i));
 
 
+/* Этот код тоже работает*/
+
+console.log(Array(5).fill("x")); 
+
+/* Этот код тоже работает*/
+
+console.log(Array.from({ length: 5 }).fill("x")); 
+
+/* А этот почему-то не работает, я пыталась сделать его по аналогии со следующим примером: 
+
+//JavaScript Array fill() Method, array.fill(value, start, end)
+
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.fill("Kiwi");
+
+
+//Example. Fill the last two array elements with a static value:
+
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.fill("Kiwi", 2, 4);
+
+_______________________Поможете разобраться?_________________________________
+var y = "y";
+var array1 = [];
+var k = 5;
+
+function array1Fill(y, k)
+{
+array1.fill(y, 0, k);
+
+return array1; 
+}
+
+
+console.log(array1.fill(y, 0, k));
+
+*/
+
+
+
+// Задание 2 НЕ СДЕЛАЛА, НО УЖЕ ПОЧТИ НА ПРАВИЛЬНОМ ПУТИ, НАДО ВРЕМЯ, ПРОВЕРЯТЬ ПОКА НЕ БУДЕМ
+// Дан трехмерный массив с числами, например [[[1, 2], [3, 4]], [[5, 6], [7, 8]]]. Найдите сумму элементов этого массива. Массив, конечно же, может быть произвольным.
+
+/*console.log("Задание 2");
+
+var massiv = [[[1, 2], [3, 4]], [[5, 6], [7, 8]]];
+var sum = 0;
+function sumItems(item) {
+   sum += item;
+   return sum;
+
+}
+
+console.log (sum);*/
+
+
+// Задание 3
+// Сделайте функцию isNumberInRange, которая параметром принимает число и проверяет, что оно больше нуля и меньше 10. Если это так - пусть функция возвращает true, если не так - false.
+console.log("Задание 3");
+
+var i;
+function isNumberInRange(i) {
+   if(i>0 && i<10)
+      return true;
+   else return false;
+}
+
+console.log(isNumberInRange(2));
+console.log(isNumberInRange(-2));
+console.log(isNumberInRange(22));
+
+
+
+// Задание 4
+// Сделайте функцию isEven() (even - это четный), которая параметром принимает целое число и проверяет: четное оно или нет. Если четное - пусть функция возвращает true, если нечетное - false.
+
+console.log("Задание 4");
+var i=0; i++;
+function isEven(i){
+    if(i>0 && i%2 === 0){
+        return true;
+    }
+    
+    else
+        {return false;
+}
+}
+console.log(isEven(3));
+
+
+// Задание 5
+// Дан массив с целыми числами. Создайте из него новый массив, где останутся лежать только четные из этих чисел. Для этого используйте вспомогательную функцию isEven из предыдущей задачи.
+
+console.log("Задание 5");
+
+var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+var arr1 = [];
+var i;
+for (i=1; i <= arr.length; i++) {
+   if(isEven(arr[i])) {
+      arr1.push(arr[i]);
+   }
+
+}
+console.log(arr1);
+
+function arrayFill(arr, i)
+{
+   for (i=1; i%2 === 0; i++) {
+      arr1.push(arr[i]);
+   }
+   
+   return arr1;
+}
+
+console.log(arr1);
+
+
+
+// Задание 6
+// Сделайте функцию getDivisors, которая параметром принимает число и возвращает массив его делителей (чисел, на которое делится данное число).
+
+/*Этот код работает*/
+
+console.log("Задание 6");
+var i;
+var k;
+var arr=[];
+
+function getDivisors(i) {
+   for(k = 1; k <= i; k++)
+      if(i%k===0) arr.push(k);
+   return arr;
+}
+console.log(getDivisors(12));
+
+/*Этот код почему-то не работает*/
+/*
+var i;
+var k;
+var arr=[];
+
+function getDivisors(i){
+   if(i>=k && i%k === 0) {
+     arr.push(k);
+     return arr;
+   }
+}
+console.log(getDivisors(12));*/
+
+
+
+// Задание 7
+// Создайте функцию, которая получает два параметра – число и степень числа. Используя ** внутри функции, возведите число в степень и выведите с помощью console.log.
+
+console.log("Задание 7");
+var num;
+var a;
+
+function getPower(num, a){
+     var power = num ** a;
+   return power;
+}
+console.log(getPower(3, 2));
+console.log(getPower(-3, 2));
+console.log(getPower(3, -2));
+console.log(getPower(0, 2));
+console.log(getPower(2, 0));
+
+
+// Задание 8
+// Функция принимает параметр - возраст пользователя. Если число больше 16 – то выводим «добро пожаловать», если меньше – “вы еще молоды”.
+
+console.log("Задание 8");
+var age = 0;
+function getAge(age) {
+   if(age >= 16)
+      return "добро пожаловать";
+   else
+      return "вы еще молоды";
+}
+
+console.log(getAge(5));
+console.log(getAge(25));
+
+
+// Задание 9
+// Модифицируйте предыдущий пример – учтите вариант, если пользователь не передал параметр в функцию. В таком случае выведите сообщение – “Введите возраст”. Реализуйте два вида проверки наличия аргумента – проверка на undefined и оператор ||.
+
+// Задание 10
+// Создайте функцию, которая считает длину массива и возвращает ее в виде числа. Массив в функцию передается как аргумент. Если аргумент не задан – выводится сообщение об ошибке.
+
+console.log("Задание 10");
+
+var arr = [];
+function getLength(arr) {
+   if(arr.length>=0)
+      return arr.length;
+   else
+      return "error";
+}
+console.log(getLength(arr = [1,2,2,3,3,3,4,4,4,4,5,5,5,5,5,6,6,6,6,6,6]));
+console.log(getLength(arr = []));
+console.log(getLength(arr));
+
+// Задание 11
+// Пользователь вводит числа. Если число больше 10, то функция возвращает квадрат числа, если меньше 7 – пишет, что число меньше 7. Если 8, 9 – то возвращает соответственно 7 или 8. Реализуйте решение с несколькими return.
+
+/*А что делать, если число равно 7 или число равно 10? Я написала эти случаи так же, как и для значений 8 и 9*/
+
+console.log("Задание 11");
+
+var i = 0;
+function makeSomething(i) {
+   if(i>10)
+      return (i ** 2); //также можно записать как (i *= i) или (i * i);
+   else if(i<7)
+      return "число меньше 7";
+   else 
+      return (i - 1);
+
+}
+
+console.log(makeSomething(100));
+console.log(makeSomething(2));
+console.log(makeSomething(0));
+console.log(makeSomething(-5));
+console.log(makeSomething(7));
+console.log(makeSomething(8));
+console.log(makeSomething(9));
+console.log(makeSomething(10));
+
+
+
+// Задание 12
+// Дана строка. Сделайте заглавным первый символ каждого слова этой строки. Для этого сделайте вспомогательную функцию ucfirst, которая будет получать строку, делать первый символ этой строки заглавным и возвращать обратно строку с заглавной первой буквой.
+
+console.log("Задание 12");
+
+var string = "make the first symbol of each letter in this string to upper case";
+var arr = string.split(" ");
+ var i = 0;
+ var space = " ";
+ var string1 = [];
+ function ucfirst(string) {
+   for(i=0; i<=arr.length; i++)
+     
+  return string1.push(string[i]);
+ }
+
+ console.log(ucfirst(string));
+
+
+
+
+// Задание 13
+// Дана строка вида 'var_text_hello'. Сделайте из него текст 'varTextHello'.
+
+// Задание 14
+// Сделайте функцию inArray, которая определяет, есть в массиве элемент с заданным текстом или нет. Функция первым параметром должна принимать текст элемента, а вторым - массив, в котором делается поиск. Функция должна возвращать true или false. Показать решение.
+
+// Задание 15
+// Дана строка, например, '123456'. Сделайте из нее '214365'.
+
+console.log("Задание 15");
+
+var str = "123456";
+var arr = str.split(" ");
+var result= [];
+for (var i = 0; i < arr.length; i++) {
+if (i%2 == 0){
+result[i]=arr[i+1];
+} else{
+result[i]=arr[i-1];
+}
+}
+console.log(result);
 
 
 
