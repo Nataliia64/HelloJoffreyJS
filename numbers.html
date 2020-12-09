@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Numbers</title>
+</head>
+<body>
+
+	<script>
+//___________________________МЕТОДЫ И СВОЙСТВА - ЗАДАЧИ НА ЧИСЛА______________________________________
+
+console.log("МЕТОДЫ И СВОЙСТВА - ЗАДАЧИ НА ЧИСЛА");
+
+// "Задача на округление с точностью до N знаков после запятой", решали на уроке:
+
+// Представьте себе электронный магазин. Цены даны с точностью до копейки(цента, евроцента и т.п.).
+// Вы пишете интерфейс для него. Основная работа происходит на сервере, но и на клиенте все должно быть хорошо. Сложение цен на купленные товары и умножение их на количество является обычной операцией.
+// Получится глупо, если при заказе двух товаров с ценами 0.10$ и 0.20$ человек получит общую стоимость 0.30000000000000004$:
+// alert( 0.1 + 0.2 + '$' );
+// Что можно сделать, чтобы избежать проблем с ошибками округления?
+ 
+// Решение:
+ 
+// Можно хранить сами цены в «копейках» (центах и т.п.). Тогда они всегда будут целые и проблема исчезнет. Но при показе и при обмене данными нужно будет это учитывать и не забывать делить на 100.
+
+// При операциях, когда необходимо получить окончательный результат – округлять до 2-го знака после запятой. Все, что дальше – ошибка округления:
+
+// var price1 = 0.1, price2 = 0.2;
+// alert( +(price1 + price2).toFixed(2) );
+
+console.log("Задача на округление с точностью до N знаков после запятой");
+
+function addPrice(first, second){
+   return ((first*100 + second*100)/100).toFixed(2);
+}
+console.log(addPrice(6, 4));
+
+
+console.log("Задача на генератор случайных чисел");
+//"Задача на генератор случайных чисел", решали на уроке, НАДО ЕЩЕ РАЗ РАЗОБРАТЬСЯ ДЛЯ ЧЕГО +1 И + from!:
+   function Random(from, to){
+      return Math.floor((Math.random()*(to - from /*+ 1*/)) /*+ from*/);
+   }
+console.log(Random(1,10));
+
+//Задача на числа №1
+
+// Написать функцию, которая получает в качестве параметра массив, затем перебирает все его элементы и выводит на экран, какая информация содержится в каждом элементе: число или не число.
+// Массив для примера: var randSimbol = ["Молоко", 77, 11, "Мед", -88];
+
+console.log("Задача на числа №1");
+
+var randSimbol = ["Молоко", 77, 11, "Мед", -88];
+function perebor(mass){
+   mass.forEach(el => console.log(el, "->", typeof el));
+}
+perebor(randSimbol);
+
+// mass.forEach(function(el){
+//       console.log(el, "->", typeof el);
+//    })
+
+console.log("Задача на числа №2");
+
+// Напишите функцию, которая получает в качестве параметра массив и перебирает его на предмет преобразования строк, начинающихся с числа в обычные числа.
+// В результате работы функции, массив должен изменить свои значения на полностью числовые.
+
+// Массив для задания:
+
+var myArray = ["100 попугаев", "201 рубль", "624 доллара", "109 кроликов", "33 весельчака", "62 кабана"];
+
+// способ 1 - возвращает в консоли undefined
+// let myArray1 = myArray.forEach(parseInt);
+// console.log(myArray1);
+
+// способ 2 - возвращает в консоли (6) [100, NaN, NaN, 3, 15, NaN]
+// function parsen(arr){
+// 	return arr.map(parseInt);
+//  }
+// console.log(parsen(myArray));
+
+// способ 3 - возвращает в консоли undefined
+
+// function numberize(massive){
+// 	for (i = 0; i < massive.length; i++){
+// 	massive[i] = parseInt(massive[i]);
+// 	}
+// }
+// console.log(numberize(myArray));
+
+// способ 4 - - фффуууххх наконец-то!!
+
+// function numberize(massive){
+// 	for (i = 0; i < massive.length; i++){
+// 	massive[i] = parseInt(massive[i]);
+// 	console.log(massive[i]);
+// 	}
+// }
+// numberize(myArray);
+
+
+// способ 5 - тоже работает!! но не сама додумалась, где-то списала, не помню где
+
+console.log(myArray.map(function(val, idx, array){ 
+	return parseInt(val)
+}));
+
+
+// способ 6 - тоже работает!! тоже не сама додумалась, списала на https://habr.com/ru/post/456344/, 
+//статья "Почему ['1', '7', '11'].map(parseInt) возвращает [1, NaN, 3] в Javascript?"
+console.log(myArray.map(numStr => parseInt(numStr)));
+
+['1', '7', '11'].map(numStr => parseInt(numStr));
+
+
+console.log("Задача на числа №3");
+// Создайте функцию, которая предлагает ввести два числа и выводит их сумму.
+// P.S. Решите эту задачу двумя способами.
+
+//Этот способ работает: 
+// let vvod1 = prompt("Введите число","");
+// let vvod2 = prompt("Введите еще одно число","");
+// alert(+vvod1 + +vvod2);
+
+//Этот способ тоже работает: 
+// let vvodX = prompt("введите число"," ");
+// let vvodY = prompt("введите число"," ");
+// prompt(parseInt(vvodX) + parseInt(vvodY));
+
+//Этот не работает, в алерте отображается весь код функции:
+// let vvod = prompt("введите 2 числа","value1, value2");
+// let summa = function(value1, value2){
+// 	return parseInt(value1) + parseInt(value2);
+// }
+
+// alert(summa);
+
+
+ //И Этот не работает, в последнем промпте выдает NaN:
+// let vvodN = prompt("введите 2 числа","value1", "value2");
+// prompt(parseInt("value1") + parseInt("value2"));
+
+
+console.log("Задача на числа №4");
+
+// Напишите функцию, которая получает в качестве параметра массив и перебирает его на предмет преобразования чисел из простых, в такие, у которых есть два знака после запятой., т.е., если в исходном массиве было число 11, то на выходе должно быть 11.00.
+
+// В результате работы функции массив должен изменить свои значения.
+
+// Массив для примера:
+// var randSimbol = [10.5, 15, 112, 77.6];
+
+let randSimbol1 = [10.5, 15, 112, 77.6];
+
+function digitAfterComma(massive){
+	for (i = 0; i < massive.length; i++){
+	massive[i] = massive[i].toFixed(2);
+	console.log(massive[i]);
+	}
+}
+digitAfterComma(randSimbol1);
+
+
+console.log("Задача на числа №5");
+
+// Ваша задача написать функцию, которая принимает два параметра.
+
+// 1. Массив, состоящий из чисел с дробями.
+// 2. Метод округления "round", "ceil" или "floor".
+
+// На выходе функция должна выводить этот же массив, но при этом все элементы массива,
+// должны быть  округлены с помощью указанного во втором параметре метода объекта Math.
+
+// Исходный массив:
+// var numberArray = [34.82, 12.90, 17.01, 78.51];	
+
+const numberArray = [34.82, 12.90, 17.01, 78.51]; 
+// let method = Math.round;
+// function okruglit(massiv, method){
+// 	for (i = 0; i < massiv.length; i++){
+// 		massiv[i] = method(massiv[i]);
+// 		console.log(massiv[i]);
+// 	}
+// }
+// okruglit(numberArray, method);
+
+const method = [Math.round, Math.ceil, Math.floor];
+
+// function okruglit1(massiv, method){
+// 	for (i = 0; i < massiv.length; i++){
+// 		massiv[i] = method[0](massiv[i]);
+// 		console.log(massiv[i]);
+// 	}
+// }
+// okruglit1(numberArray, method);
+
+function changeMassiv(massiv, method, i, k){
+	for (i = 0; i < massiv.length; i++){
+		for (k = 0; k < method.length; k++){
+			massiv[i] = method[k](massiv[i]);
+			console.log (massiv[i]);
+			// console.log (massiv[i] = method[0](massiv[i]));
+			// console.log (massiv[i] = method[1](massiv[i]));
+			
+		}
+	}
+}
+changeMassiv(numberArray, method, 0, 2);
+
+
+console.log("Задача на числа №6");
+
+// Вам нужно создать функцию, которая будет принимать три параметра.
+
+// 1. Массив, состоящий из 10 пустых элементов.
+// 2. Начальное значение интервала
+// 3. Конечное значение интервала.
+
+// Функция должна заполнить пустой массив случайными числами в указанном диапазоне и вывести содержимое массива на экран.
+
+// Исходный массив для примера:
+// var randomArray = new Array(10);
+
+const randomArray = new Array(10);
+
+function randomizeArr(arr, from, to){
+	for(let i = 0; i<arr.length; i++){
+ 		arr[i] = Math.floor((Math.random()*(to - from + 1)) + from);
+ 	}
+ 	document.write(arr);
+}
+
+randomizeArr(randomArray, 0, 10);
+console.log(randomArray);
+
+// 	Способ forEach или map здесь не подходят, так как эти два способа работают ТОЛЬКО с элементами. Если массив пустой или включает несколько ПУСТЫХ //элементов, эти два способа просто "не увидят" в массиве ничего, кроме пустоты, даже индексы пустых элементов не помогут. 
+//Больше об этом https://webdevblog.ru/for-protiv-foreach-protiv-for-in-i-protiv-for-of-v-javascript/  "Циклические конструкции for и for/in //предоставляют вам доступ к индексу в массиве, а не к фактическому элементу", "через forEach() и for/of, вы сразу получаете доступ к самому //элементу массива.". И о пустых элементах массивов: "forEach() и for/in пропускают пустые элементы в массиве, for и for/of — нет."
+
+
+//Если есть ПУСТОЙ массив (а не массив, содержащий пустые элементы), можно использовать метод push:
+
+const randomArr = [];
+function fillRandom(arr, count, from, to){ 
+	let i = 0;
+	while(i<=count){
+		arr.push(Math.floor((Math.random()*(to - from + 1)) + from));
+	    i++;
+	}
+	return arr;
+}
+console.log(fillRandom(randomArr, 7, 1, 100));
+
+//попробуем метод fill: 
+
+
+
+	</script>
+	
+</body>
+</html>

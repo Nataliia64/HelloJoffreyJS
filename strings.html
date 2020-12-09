@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Strings</title>
+</head>
+<body>
+	<script>
+		
+		// Задание 12
+// Дана строка. Сделайте заглавным первый символ каждого слова этой строки. Для этого сделайте вспомогательную функцию ucfirst, которая будет получать строку, делать первый символ этой строки заглавным и возвращать обратно строку с заглавной первой буквой.
+
+console.log("Задание 12");
+
+let string = "make the first symbol of each letter in this string to upper case";
+
+  function stringTransformation(string) {
+  	let arr = string.split(" ");
+   	for(i=0; i<arr.length; i++){
+		arr[i] = ucFirst(arr[i]);
+   	}
+   	return string = arr.join(" ");
+
+  }
+
+  function ucFirst(str) {
+return str.slice(0, 1).toUpperCase() + str.slice(1);
+}
+
+console.log(stringTransformation(string));
+   	
+
+
+var string1 = "hello everybody i study js";
+
+function string1Transformation(string) {
+var arr = string1.split(' ');
+
+for (let i = 0; i < arr.length; i++) {
+arr[i] = ucFirst(arr[i]);
+}
+return string1 = arr.join(" ");
+}
+
+function ucFirst(str) {
+return str.slice(0, 1).toUpperCase() + str.slice(1);
+}
+
+console.log(string1Transformation(string1));
+
+
+
+// Задание 13
+// Дана строка вида 'var_text_hello'. Сделайте из него текст 'varTextHello'.
+
+// Задание 14
+// Сделайте функцию inArray, которая определяет, есть в массиве элемент с заданным текстом или нет. Функция первым параметром должна принимать текст элемента, а вторым - массив, в котором делается поиск. Функция должна возвращать true или false. Показать решение.
+
+// Задание 15
+// Дана строка, например, '123456'. Сделайте из нее '214365'.
+
+console.log("Задание 15");
+
+var str = "123456";
+var arr = str.split(" ");
+var result= [];
+for (var i = 0; i < arr.length; i++) {
+if (i%2 == 0){
+result[i]=arr[i+1];
+} else{
+result[i]=arr[i-1];
+}
+}
+console.log(result);
+
+// _____________________________________ЛЕКЦИЯ 11 - ВВЕДЕНИЕ В МЕТОДЫ И СВОЙСТВА_________________________________________________
+
+//___________________________МЕТОДЫ И СВОЙСТВА - ЗАДАЧИ НА СТРОКИ______________________________________
+// Методы и свойства Задача 1
+
+// 1. Напишите функцию, которая в качестве параметра получает строку, а как результат своей работы,  возвращает количество символов в этой строке (не печатает на экран, а именно возвращает).
+
+// 2. Запросите у пользователя ввод любого слова и поместите этот ввод в переменную.
+
+// 3. Вызовите вашу функцию, а в качестве параметра передайте ей переменную, в которой сохранено слово пользователя.
+
+// 4. Напечатайте на экран сообщение о том, сколько же символов оказалось в введенном пользователем  слове.
+
+console.log("Методы и свойства Задача 1");
+
+/*const s = prompt("введите любое слово", "");
+
+
+function countSymbols(str){
+   return str.length;
+}
+const symbols = countSymbols(s);
+alert(symbols);
+
+//то же самое, но со стрелочной функцией:
+const symbolsCount = str => str.length;
+const count = symbolsCount(s);
+console.log("count => ", count);*/
+
+// Методы и свойства Задача 2
+
+// 1. Напишите функцию, которая в качестве параметра получает строку, а как результат  свой работы вычисляет, в строке больше 10 символов или меньше.
+
+// 2. Запросите у пользователя ввод любого слова и поместите этот ввод в переменную.
+
+// 3. Вызовите вашу функцию, а в качестве параметра передайте то самое слово, которое вы  сохранили в  переменную.
+
+// 4. Напечатайте на экран сообщение о том, больше 10 символов в этом слове, меньше или равно 10.
+
+console.log("Методы и свойства Задача 2");
+/*const t = prompt("введите какое-нибудь слово", "");*/
+/*function countTen(str){
+   let message;
+   str.length > 10? message = "больше 10 символов" : 
+   str.length < 10? message = "меньше 10 символов" : 
+   message = "10 символов";
+   return message;
+}
+alert(countTen(t));
+console.log(countTen(t));*/
+
+//сократим код, так как слово message встречается 3 раза
+
+/*function countTen(str){
+   
+   const message = str.length > 10? "больше 10 символов" : 
+   str.length < 10? "меньше 10 символов" : 
+   "10 символов";
+   return message;
+}
+alert(countTen(t));
+console.log(countTen(t));*/
+
+//сократим код, так как слово message и константа там вообще лишние:
+
+/*function countTen(str){
+   
+   return str.length > 10? "больше 10 символов" : 
+   str.length < 10? "меньше 10 символов" : 
+   "10 символов";
+   }
+alert(countTen(t));
+console.log(countTen(t));*/
+
+//то же самое, но со стрелочной функцией:
+/*const t = prompt("введите какое-нибудь слово", "");
+const tenCount = str => str.length > 10? "больше 10 символов" : str.length < 10? "меньше 10 символов" : "10 символов"; 
+console.log("tenCount =>", tenCount(t));*/
+
+
+
+// Методы и свойства Задача 3
+
+// Задайте человеку вопрос через метод  prompt().
+// Правильный ответ заранее поместите в переменную var answer.  
+// Правильный ответ запишите полностью маленькими буквами.
+
+// Когда получите ответ от пользователя, переведите его в нижний регистр и сравните с ответом из переменной.
+
+// Если ответ верный, то выведите сообщение, что ответ верный, если нет, то сообщение о том, что  неверный.
+
+// После того как скрипт будет готов, попробуйте сами ответить на вопрос, вводя его разными буквами.
+
+// Попробуйте на время убрать метод toLowerCase() из скрипта и посмотрите, что произойдет.
+
+console.log("Методы и свойства Задача 3");
+/*const ask = prompt("Вопрос?", "");
+const answer = "ответ";
+ask.toLowerCase() === answer ? prompt("ответ верный") : prompt("ответ неверный");*/
+
+
+
+// Методы и свойства Задача 4
+
+// У вас есть переменная
+// var mySite = "http://crispwp.com/";
+
+// Вам надо написать функцию, которая примет эту переменную в качестве параметра, а в теле функции проверит с помощью метода indexOf, встречается ли в этой переменной подстрока "http://".
+
+// Если да, то вывести на экран сообщение, что в названии сайта присутствует указание протокола "http://", иначе - вывести, что не присутствует.
+
+console.log("Методы и свойства Задача 4");
+
+const mySite = "http://crispwp.com/";
+
+/*function searchHttp(str) {
+   return str.indexOf("http://") !== -1 ? ("в названии сайта присутствует указание протокола http://") :
+   ("в названии сайта нет указания протокола http://");
+
+}
+console.log(searchHttp(mySite));*/
+
+const httpSearch = str => str.indexOf("http://") !== -1? ("в названии сайта присутствует указание протокола http://") : ("в названии сайта нет указания протокола http://");
+
+console.log("httpSearch =>", httpSearch(mySite));
+
+
+
+
+//    Методы и свойства Задача 5
+
+// У вас есть строка var myStr = "Хороший день.";
+
+// Ваша задача поместить слово "день" из этой строки в переменную day с помощью метода slice.
+
+// Вывести эту переменную на экран.
+
+//Методы и свойства Задача 5a
+
+// Написать функцияю, которая будет принимать 2 аргумента: 1) строку и 2) слово, которое нужно найти в этой строке. Функция должна возвратить или это слово (если оно найдено), или "такого слова в этой строке нет" (если слова нет). 
+
+console.log("Методы и свойства Задача 5");
+
+var myStr = "Хороший день.";
+
+var day = myStr.slice(8, 12);
+
+console.log(day);
+
+console.log("Методы и свойства Задача 5a");
+
+let myText = "Хороший день.";
+let myWord = "собака";
+
+const searchWord = (text, word) => text.indexOf(myWord) !== -1? myWord : ("такого слова в этой строке нет");
+console.log("searchWord =>", searchWord(myText, myWord));
+
+// Сама придумала задачу: Написать функцияю, которая будет искать в тексте определенное слово, и, если оно найдено, заменять на другое заданное слово.
+//I love cats because they are nice. Cats love to play. Cats are fluffy. A good cat is the face of a household. Задача: cat заменить на dog.
+console.log("Методы и свойства Задача 5b");
+let shortText = "I love cats because they are nice.";
+//let shortText = "I love cats because they are nice. Cats love to play. Cats are fluffy. A good cat is the face of a household.";
+let wordOut = "cat";
+let wordIn = "dog";
+const replaceWord = (oldWord, newWord) => shortText.replace(oldWord, newWord);
+//const replaceWord = (oldWord, newWord) => {while oldWord == cat || oldWord == Cat {shortText.replace(oldWord, newWord)} };
+console.log(replaceWord(wordOut, wordIn));
+//решение с string.replace(a, b) в справочниках и учебниках не нашла, но нашла на форуме, https://qna.habr.com/q/110537, тема "Как заменить символ в строке js?", правда, работает только однократно и чувствителен к регистру, надо наверное циклом делать, может вместе попробуем, что-то сама не соображу
+
+//const findWordOut = (text, oldWord) => oldText.indexOf(oldWord) !== -1? const replaceWord = (oldWord, newWord) => oldText.replace(oldWord, newWord);
+
+
+
+// Методы и свойства Задача 6
+
+// У вас есть массив: var students = ["Илья","Greg", "Алина"];
+// Вам надо пройтись по каждому элементу этого массива и выяснить в каком элементе массива есть буквы, которые не попадают в диапазон русских букв.
+
+// Подсказка. Для определения русских букв используйте Юникод.  При решении нужно использовать цикл внутри цикла. В первом цикле вы перебираете элементы массива, а во внутреннем цикле уже каждый символ текущего элемента массива. Для  внутреннего цикла можете назвать счетчик var j = 0;
+console.log("Методы и свойства Задача 6");
+
+var studentss = ["Илья","Greg", "Алина"];
+
+   for (var i = 0; i < studentss.length; i++) {
+      for (var j = 0; j < studentss[i].length; j++) {
+         studentss[i].charCodeAt(j) >= 1040 && studentss[i].charCodeAt(j) <= 1103? 
+         console.log(studentss[i][j] + "-" + "русская буква"): console.log(studentss[i][j] + "-" + "не русская буква");
+      }
+      
+   }
+
+   // for (var i = 0; i < studentss.length; i++) {
+   //    for (var j = 0; j < studentss[i].length; j++) {
+   //       studentss[i].charCodeAt(j) >= 1040 && studentss[i].charCodeAt(j) <= 1103? 
+   //       console.log(" "):
+   //       console.log(studentss[i] + "-" + "в этом элементе массива есть буквы, которые не попадают в диапазон русских букв");        
+   //    }
+      
+   // }
+
+   for (var i = 0; i < studentss.length; i++) {
+      for (var j = 0; j < studentss[i].length; j++) {
+         studentss[i].charCodeAt(j) < 1040 || studentss[i].charCodeAt(j) > 1103? 
+            console.log(studentss[i] + "-" + "в этом элементе массива есть буквы, которые не попадают в диапазон русских букв"):
+            console.log("");        
+      }
+      
+   }
+
+// console.log("Методы и свойства Задача 6 юникод русского алфавита");
+// //Конвертация символов в их числовые значения (unicode values) http://forall.ru-board.com/Svarga/cyr_letters_gen.html
+// const alphavit = "АаБбВвГгДдЕеЖжЗзИиЙйКкЛлМмНнОоПпРрСсТтУуФфХхЦцЧчШшЩщЪъЫыЬьЭэЮюЯя";
+// console.log(alphavit.length);
+// console.log(alphavit.charCodeAt(0));
+// console.log(alphavit.charCodeAt(63));
+
+
+// Методы и свойства Задача 7
+
+// Создайте функцию truncate(str, maxlength), которая проверяет длину строки str, и если она превосходит maxlength – заменяет конец str на "...", так чтобы ее длина стала равна maxlength.
+
+// Результатом функции должна быть (при необходимости) усеченная строка.
+
+
+console.log("Методы и свойства Задача 7");
+
+let longstring = "extremely long string long string long string";
+const maxlength = 21;
+
+function truncate(bigstring, maxlength){
+   bigstring.length >= maxlength ? bigstring = bigstring.substr(0, maxlength - 3) + "...":
+   bigstring;
+   console.log(bigstring);
+}
+truncate(longstring, maxlength);
+
+//А как отсечь строку до определенного символа, если мы не знаем индекса этого символа? А вот как (отсекаем до символа "!" включительно):
+let long = "Uuuuuuuuuuuuuuuuuuuh! string";
+const shorten = long => long.substring(0, long.indexOf("!")+1) + "...";
+console.log(shorten(long));
+
+
+
+// Методы и свойства Задача 8
+
+// Строки вида «my-short-string» в «myShortString».
+
+// То есть, дефисы удаляются, а все слова после них получают заглавную букву.
+
+// P.S. Вам пригодятся методы строк charAt, split и toUpperCase.
+console.log("Методы и свойства Задача 8");
+
+let stroka = "my-short-string";
+
+//  списала решение на https://learn.javascript.ru/task/camelcase
+
+
+const modifyStroka = string => string.split("-").map(
+      (word, index) => index == 0 ? word : word[0].toUpperCase() + word.slice(1)
+    ).join(""); 
+console.log(modifyStroka(stroka));
+
+// списала решение на https://gist.github.com/sealucky7/25b88780afd1c4300b44b6871fdd3aa7
+
+function changeStroka(strokaX) {
+	let strokaY = strokaX.split("-");
+	for(i = 1; i<strokaY.length; i++){
+		strokaY[i] = strokaY[i].charAt(0).toUpperCase() + strokaY[i].slice(1);
+	}
+
+	return strokaY.join("");
+}
+console.log(changeStroka(stroka));
+
+//  сама пыталась решить, без того чтобы преобразовывать струку в массив, чтобы все решить только методом строк, но не получилось блин
+
+let line1 = "every word in this line starts with upper case";
+function makeUpper(lineN){
+    for(i = 0; i<lineN.length; i++){
+      	lineN[i] = lineN[lineN.indexOf(" ", i) + 1].toUpperCase();
+      		}
+	return console.log(lineN);
+}
+makeUpper(line1);
+
+
+
+
+
+
+
+
+	</script>
+	
+</body>
+</html>
