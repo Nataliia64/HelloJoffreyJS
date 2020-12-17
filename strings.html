@@ -239,7 +239,7 @@ let shortText = "I love cats because they are nice.";
 let wordOut = "cat";
 let wordIn = "dog";
 const replaceWord = (oldWord, newWord) => shortText.replace(oldWord, newWord);
-//const replaceWord = (oldWord, newWord) => {while oldWord == cat || oldWord == Cat {shortText.replace(oldWord, newWord)} };
+//const replaceWord = (oldWord, newWord) => {while oldWord === cat || oldWord === Cat {shortText.replace(oldWord, newWord)} };
 console.log(replaceWord(wordOut, wordIn));
 //решение с string.replace(a, b) в справочниках и учебниках не нашла, но нашла на форуме, https://qna.habr.com/q/110537, тема "Как заменить символ в строке js?", правда, работает только однократно и чувствителен к регистру, надо наверное циклом делать, может вместе попробуем, что-то сама не соображу
 
@@ -339,19 +339,19 @@ console.log(modifyStroka(stroka));
 // списала решение на https://gist.github.com/sealucky7/25b88780afd1c4300b44b6871fdd3aa7
 
 function changeStroka(strokaX) {
-	let strokaY = strokaX.split("-");
-	for(i = 1; i<strokaY.length; i++){
-		strokaY[i] = strokaY[i].charAt(0).toUpperCase() + strokaY[i].slice(1);
+	strokaX = strokaX.split("-");
+	for(i = 1; i<strokaX.length; i++){
+		strokaX[i] = strokaX[i].charAt(0).toUpperCase() + strokaX[i].slice(1);
 	}
 
-	return strokaY.join("");
+	return strokaX.join("");
 }
 console.log(changeStroka(stroka));
 
-//  сама пыталась решить, без того чтобы преобразовывать струку в массив, чтобы все решить только методом строк, но не получилось блин
+//  сама пыталась решить, без того чтобы преобразовывать строку в массив, чтобы все решить только методом строк, но не получилось блин
 
 let line1 = "every word in this line starts with upper case";
-function makeUpper(lineN){
+function makeUpper(lineN, i){
     for(i = 0; i<lineN.length; i++){
       	lineN[i] = lineN[lineN.indexOf(" ", i) + 1].toUpperCase();
       		}
@@ -359,14 +359,73 @@ function makeUpper(lineN){
 }
 makeUpper(line1);
 
+// 5 типовых задач на собеседованиях по JavaScript
+// https://medium.com/webbdev/js-2b0820b3788f
+
+// Палиндром
+console.log("Палиндром");
+// Палиндром — слово, предложение или последовательность символов, которая абсолютно одинаково читается как в привычном направлении, так и в обратном. К примеру, “Anna” — это палиндром, а “table” и “John” — нет.
+// Постановка
+// Дана строка; нужно написать функцию, которая позволяет вернуть значение true, если строка является палиндромом, и false — если нет. При этом нужно учитывать пробелы и знаки препинания.
+
+//Для строки без знаков препинания и пробелов действует вот такая функция:
+
+let phrase = "Anna";
+
+function checkPalindrome(text){
+	text = text.toLowerCase();
+	return text = text.split("").reverse().join("");
+	console.log(text);
+}
+console.log(checkPalindrome(phrase));
+
+let phrase1 = checkPalindrome(phrase);
+phrase.toLowerCase() === phrase1? console.log("true"): 
+console.log("false");
+
+// Для строк с пробелами и знаками препинания, надо пробелы и знаки препинания убрать, а потом по возможности поставить на место. 
+// Чтобы убрать во всей строке пробелы: str.replace(/\s+/g, "") где /\s/ - регулярное выражение для пробела (s должно в шаблоне регулярного выражения т.е. между двумя слешами еще и экранировать обратным слешем, так как это не буква, а символ пробела space); знак + показывает что убрать элемент надо одновременно везде где он есть, а g - флажок для регулярных выражений, означает Глобально, то есть убирать одинаковые элементы последовательно пока не кончатся. Чтобы убрать везде конкретный элемент строки и не пользоваться indexOf сто раз, можно использовать метод replace (заменить элемент на "")
+//О регулярных выражениях: https://medium.com/nuances-of-programming/%D0%B2%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B2-%D1%80%D0%B5%D0%B3%D1%83%D0%BB%D1%8F%D1%80%D0%BD%D1%8B%D0%B5-%D0%B2%D1%8B%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B2-javascript-429e6264b7bf
+
+let str7 = "Racecar";
+let str8 = "Table";
+let str9 = "А роза упала на лапу Азора";
+let str10 = "A man, a plan, a canal: Panama";
+const palindrome = str => {
+	str = str.toLowerCase().replace(/\s+/g, "").replace(/,+/g, "").replace(/:+/g, "");
+	return str.split("").reverse().join(""); 
+}
+console.log(palindrome(str7));
+console.log(palindrome(str8));
+console.log(palindrome(str9));
+console.log(palindrome(str10));
+
+let str7a = palindrome(str7);
+(str7.toLowerCase().replace(/\s+/g, "").replace(/,+/g, "").replace(/:+/g, "")) === str7a? console.log("true"):
+console.log("false");
+
+let str8a = palindrome(str8);
+(str8.toLowerCase().replace(/\s+/g, "").replace(/,+/g, "").replace(/:+/g, "")) === str8a? console.log("true"):
+console.log("false");
 
 
+let str9a = palindrome(str9);
+(str9.toLowerCase().replace(/\s+/g, "").replace(/,+/g, "").replace(/:+/g, "")) === str9a? console.log("true"):
+console.log("false");
 
+let str10a = palindrome(str10);
+(str10.toLowerCase().replace(/\s+/g, "").replace(/,+/g, "").replace(/:+/g, "")) === str10a? console.log("true"):
+console.log("false");
 
+//Вот задачка из учебника И.Кантора, но она не работает, консоль выдает strings.html:423 Uncaught SyntaxError: Invalid or unexpected token
+// var str = "Ослик Иа‐Иа посмотрел на виадук"; // ищем в этой строке
+// var target = "Иа"; // цель поиска
+// var pos = ‐1;
+// while ((pos = str.indexOf(target, pos + 1)) != ‐1) {
+// alert( pos );
+// }
 
-
-
-	</script>
+</script>
 	
 </body>
 </html>

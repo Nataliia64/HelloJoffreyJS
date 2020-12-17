@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Objects</title>
+</head>
+<body>
+	<script>
+		
+		//_______________________________ОБЪЕКТЫ_________________________
+console.log("Objects");
+
+console.log("Задание 0");
+
+// У нас есть объект:
+// var tour = {
+//       egypt : 60,
+// turkey : 50,
+// spain : 90
+// }
+// Нужно написать метод, который будет рассчитывать стоимость путевки принимая такие параметры(количество людей, сколько дней, страна)
+
+// var tour = {
+//       egypt: 60,
+//       turkey: 50,
+//       spain: 90
+//    }
+// tour.calc = function(people, days, country){
+   
+//    return people*days*tour[country];
+// }
+// console.log(tour.calc(3, 7, "egypt"));
+
+
+// var tour = {
+//       egypt: 60,
+//       turkey: 50,
+//       spain: 90,
+//       calc: function(people, days, country){
+//                return people*days*tour[country];
+//             }
+//    }
+
+// console.log(tour.calc(3, 7, "egypt"));
+
+var tour = {
+      egypt: 60,
+      turkey: 50,
+      spain: 90,
+      calc: function(people, days, country){
+               return people*days*this[country];
+            }
+   }
+
+console.log(tour.calc(3, 7, "egypt"));
+console.log(tour.calc(2, 10, "spain"));
+
+
+console.log("Задание 1");
+// Есть объект salaries с зарплатами. Напишите код, который выведет сумму всех зарплат.
+// Если объект пустой, то результат должен быть 0.
+
+var salaries = {
+   "Вася": 100,
+   "Петя": 300,
+   "Даша": 250,
+   }
+   
+console.log("Задание 1 способ 1");
+   function calc(salaries){
+
+      return salaries.Вася + salaries.Петя + salaries.Даша;
+      }
+   
+   console.log(calc(salaries));
+
+   console.log("Задание 1 способ 2");
+
+
+   console.log("Задание 1 способ 3");
+
+   function allSalaries(salaries){
+      var sumSalaries = 0;
+      for(var name in salaries){
+         sumSalaries = sumSalaries + salaries[name]; 
+         }
+      return sumSalaries;
+   }
+   console.log(allSalaries(salaries));
+
+
+console.log("Задание 2");
+// Есть объект salaries с зарплатами. Напишите код, который выведет имя сотрудника, у которого самая большая зарплата.
+// Если объект пустой, то пусть он выводит «нет сотрудников».
+
+var salaries = {
+   "Вася": 100,
+   "Петя": 300,
+   "Даша": 250
+ };
+
+ function biggestSalary(salaries){
+   var highestSalary = 0;
+   var person;
+   for(var name in salaries) {
+      if (salaries[name]>highestSalary) {
+          highestSalary = salaries[name];
+          person = name;
+      }
+   }
+   return highestSalary + " " + person;
+ }
+ console.log(biggestSalary(salaries));
+
+ //Сделать то же самое, только с помощью переменной-массива
+console.log("Задание 2 способ массив");
+
+ var salaries = {
+   "Вася": 100,
+   "Петя": 300,
+   "Даша": 250
+ };
+
+  function biggestMoney(salaries){
+   var highestMoney = [" ", 0];
+      for(var name in salaries) {
+      if (salaries[name]>highestMoney[1]) {
+          highestMoney[1] = salaries[name];
+          highestMoney[0] = name;
+          
+      }
+   }
+   return highestMoney[0] + " " + highestMoney[1];
+ }
+ console.log(biggestMoney(salaries));
+
+ //шаблонная строка: над клавишей Таб обратная кавычка, позволяет выводить без конкатенации, переменные внутри кавычек используются со знаком $, например: return `У ${highestMoney[0]} зарплата ${highestMoney[1]}`;
+
+
+ // const largestMoney = salaries => {
+ //   let highMoney = [" ", 0];
+ //      for(let name in salaries) {
+ //      if (salaries[name]>highMoney[1]) {
+ //          highMoney[1] = salaries[name];
+ //          highMoney[0] = name;
+          
+ //      }
+ //   }
+ //   return `У ${largestMoney[0]} зарплата ${largestMoney[1]}`;
+ //   console.log(largestMoney(salaries));
+
+console.log("Задачи из https://learn.javascript.ru/object");
+//  Напишите код, выполнив задание из каждого пункта отдельной строкой:
+
+//Привет, object
+// Создайте пустой объект user.
+// Добавьте свойство name со значением John.
+// Добавьте свойство surname со значением Smith.
+// Измените значение свойства name на Pete.
+// Удалите свойство name из объекта.
+console.log("Привет, object");
+var user = {};
+user.name = "John";
+user.surname = "Smith";
+console.log(user);
+user.name = "Pete";
+console.log(user);
+delete user.name;
+console.log(user);
+
+//Проверка на пустоту
+console.log("Проверка на пустоту");
+
+// Напишите функцию isEmpty(obj), которая возвращает true, если у объекта нет свойств, иначе false.
+
+// Должно работать так:
+
+// let schedule = {};
+
+// alert( isEmpty(schedule) ); // true
+
+// schedule["8:30"] = "get up";
+
+// alert( isEmpty(schedule) ); // false
+
+
+let schedule = {};
+function isEmpty(schedule) {
+  for (let key in schedule) {
+     return false;
+  }
+  return true;
+}
+console.log(isEmpty(schedule));
+
+//Сумма свойств объекта
+console.log("Сумма свойств объекта");
+
+// У нас есть объект, в котором хранятся зарплаты нашей команды:
+
+// let salaries = {
+//   John: 100,
+//   Ann: 160,
+//   Pete: 130
+// }
+// Напишите код для суммирования всех зарплат и сохраните результат в переменной sum. Должно получиться 390.
+
+// Если объект salaries пуст, то результат должен быть 0.
+
+let wages = {
+  John: 100,
+  Ann: 160,
+  Pete: 130
+}
+function summa(wages) {
+   return wages.John + wages.Ann + wages.Pete;
+}
+console.log(summa(wages));
+
+let wagesum = 0;
+for (let key in wages) {
+  wagesum += wages[key];
+}
+console.log(wagesum);
+
+//Умножаем все числовые свойства на 2
+console.log("Умножаем все числовые свойства на 2");
+
+// Создайте функцию multiplyNumeric(obj), которая умножает все числовые свойства объекта obj на 2.
+
+// Например:
+
+// // до вызова функции
+// let menu = {
+//   width: 200,
+//   height: 300,
+//   title: "My menu"
+// };
+
+// multiplyNumeric(menu);
+
+// // после вызова функции
+// menu = {
+//   width: 400,
+//   height: 600,
+//   title: "My menu"
+// };
+// Обратите внимание, что multiplyNumeric не нужно ничего возвращать. Следует напрямую изменять объект.
+
+// P.S. Используйте typeof для проверки, что значение свойства числовое.
+
+let menu = {
+   width: 200,
+   height: 300,
+};
+
+for (let size in menu){
+   menu[size] *= 2;
+}
+console.log(menu);
+
+let menue = {
+   width: 200,
+   height: 300,
+   title: "My menu"
+};
+for (let size in menue){
+   if (typeof menue[size] === 'number') {
+      menue[size] *= 2;
+    }
+}
+console.log(menue);
+
+console.log("Умножаем все числовые свойства на 2 и вносим в новый объект");
+
+let menushka = {
+   width: 200,
+   height: 300,
+   title: "My menu"
+};
+
+let menuLarge = {};
+function makeLarge(base, outcome){
+   for (let size in base){
+      if (typeof base[size] === "number"){
+         outcome[size] = base[size]*2;
+      } else {
+         outcome[size] = base[size];
+      }
+   }
+}
+makeLarge(menushka, menuLarge);
+console.log(menuLarge);
+
+function makeBig(base, outcome){
+   for (let size in base){
+      //typeof base[size] === "number" ? outcome[size] = base[size]*2 : outcome[size] = base[size];
+      //верхняя строчка приемлемая, но  нужно вынести повторяющийся outcome[size] вперед и записать так:
+      //outcome[size] = (typeof base[size] === "number") ? base[size]*2 : base[size];
+      //последний вариант уже лучше, но можно записать еще короче и лучше:
+      outcome[size] = base[size]*2 || base[size];
+      //данная запись означает: base[size] умножить на 2 ИЛИ просто base[size] (просто base[size] вернется в случае, если умножение невозможно, //т.е. когда size внутри base имеет нечисловое значение). Тогда не надо использовать typeof, так как умножение осуществляется и так только с //числами. 
+   }
+}
+
+makeBig(menushka, menuLarge);
+console.log(menuLarge);
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Arrays</title>
+</head>
+<body>
+	<script>
+		// ------------------------------------------Лекция 7. Массивы текст заданий закомментирован //, мой код /*   */------
+   //ДЗ 15 октября 2020
+
+   //# 1.
+   // Создайте два массива.
+   //1-й - это массив из пяти стран на ваш выбор.
+   //2-й - это массив количества населения в этих странах (этот массив состоит исключительно из цифр).
+
+   //А затем с помощью метода document.write() выведите на экран пять строк, где каждая строка - это название страны и численность ее населения.
+
+   /*var country = ["Ukraine", "Germany", "France", "Italy", "Spain", "USA", "China"];
+   var population = [41, 83, 67, 60, 47, 328, 1393, 144];
+   var units = "million people"
+
+   document.write("Task #1" + "<br\/>" + "<br\/>" + country[0] + " - " + population[0] + " " + units + "<br \/>" + country[1] + " - " + population[1] + " " + units + "<br \/>" + country[2] + " - " + population[2] + " " + units + "<br \/>" + country[3] + " - " + population[3] + " " + units + "<br \/>" + country[4] + " - " + population[4] + " " + units + "<br \/>" + country[5] + " - " + population[5] + " " + units + "<br \/>" + country[6] + " - " + population[6] + " " + units + "<br \/>" + "<br \/>");*/
+
+
+   //#2.
+   //1. Создайте массив с фруктами: апельсин, банан, груша.
+   //2. Выведите на экран, сколько на данный момент у вас фруктов в  массиве.
+   //3. С помощью методов, изученных в предыдущем уроке,  добавьте в конец массива два фрукта - яблоко и ананас, а в  начало массива - грейпфрут.
+   //4. Выведите на экран, сколько на данный момент у вас фруктов в  массиве.
+   //5. С помощью методов, изученных в предыдущем уроке,  удалите  из массива последний и первый элемент.
+   //6. Выведите на экран, сколько на данный момент у вас фруктов в  массиве.
+
+   /*var fruits = ["orange", "banana", "pear"];
+   document.write("Task #2" + "<br\/>" + "<br\/>" + fruits[0] + ", " + fruits[1] + ", " + fruits[2] + " - " + fruits.length + " fruits" + "<br\/>" +  "<br\/>");
+   fruits.splice(0, 0, "grapefruit");
+   fruits.splice(4, 0, "apple", "pine-apple");
+   document.write(fruits + " - " + fruits.length + " fruits" + "<br \/>" + "<br \/>");
+   fruits.pop();
+   //document.write(fruits + " - " + fruits.length + " fruits" + "<br \/>" + "<br \/>");
+   fruits.shift();
+   document.write(fruits + " - " + fruits.length + " fruits" + "<br \/>" + "<br \/>");*/
+
+
+   //#3.
+
+   //У Вас есть массив, про который заранее известно, что в нем точно больше одного элемента.  
+   //Но сколько именно - неизвестно. Пусть это будет такой массив с фруктами:
+   //var fruits = ["яблоко", "апельсин", "груша", "гранат"];
+   //Напомню, что по условиям Вы не знаете сколько точно в нем элементов, их может быть и 100  и 200.
+   //Ваша задача состоит в том, чтобы с помощью метода splice заменить в массиве  
+   //предпоследний фрукт на "ананас" и вывести весь массив на экран.
+
+   //Когда это будет сделано, проверьте свой код на таком массиве:
+   //var fruits = ["банан", "мандарин", "манго"];
+   //В этом массиве у Вас мандарин должен будет замениться на ананас.
+
+
+   /*var fruits = ["яблоко", "апельсин", "груша", "гранат"];
+   document.write("Task #3" + "<br\/>" + "<br\/>" + fruits + "<br\/>" + "<br\/>");
+   fruits.reverse();
+   fruits.splice(1, 1, "ананас");
+   fruits.reverse();
+   document.write(fruits + "<br\/>" + "<br\/>");
+
+   var fruits = ["банан", "мандарин", "манго"];
+   document.write(fruits + "<br\/>" + "<br\/>");
+   fruits.reverse();
+   fruits.splice(1, 1, "ананас");
+   fruits.reverse();
+   document.write(fruits + "<br\/>" + "<br\/>");*/
+
+   //Домашнее задание (массивы -  функции)
+// Задание 1
+// Написать функцию которая первым принимает значение, которым заполнять массив, а вторым - сколько элементов должно быть в массиве. Пример: arrayFill('x', 5) сделает массив ['x', 'x', 'x', 'x', 'x'].
+
+console.log("Задание 1");
+
+/* Этот код работает*/
+console.log("Способ 1");
+
+var x = "x";
+var i = 5;
+
+function arrayFill1(value, number) {
+   var array = [];
+   for (var i = 0; i < number; i++) {
+      array.push(value);
+   }
+   
+   return array;
+}
+
+console.log(arrayFill1(x, i));
+
+
+
+/* Этот код тоже работает*/
+console.log("Способ 2");
+
+console.log(Array(5).fill("и")); 
+
+/* Этот код тоже работает*/
+console.log("Способ 3");
+
+console.log(Array.from({ length: 5 }).fill("ой")); 
+
+//А этот почему-то не работает, я пыталась сделать его по аналогии со следующим примером: 
+
+//JavaScript Array fill() Method, array.fill(value, start, end)
+
+//var fruits = ["Banana", "Orange", "Apple", "Mango"];
+//fruits.fill("Kiwi");
+
+
+//Example. Fill the last two array elements with a static value:
+
+//var fruits = ["Banana", "Orange", "Apple", "Mango"];
+//fruits.fill("Kiwi", 2, 4);
+
+//_______________________Поможете разобраться?_________________________________
+
+//Разобрались на уроке, спасибо!!
+
+console.log("Способ 4");
+
+function array1Fill(value, number){
+
+   var array = Array(number);
+   array.fill(value);
+
+   return array; 
+}
+
+console.log(array1Fill("x", 10));
+
+
+//упростили код
+console.log("Способ 6");
+const arrayФункция = (собака, кот) => Array(кот).fill(собака);
+console.log(arrayФункция("y", 6));
+
+//пробуем решить с помощью метода map
+
+console.log("Способ 7");
+function array2Fill(value, number){
+
+     return Array(number).map(function (item) {
+      console.log("item", item);
+      return item = value; 
+   });
+
+}
+
+console.log(array2Fill("z", 10));
+     
+
+// Задание 2 Дан трехмерный массив с числами, например [[[1, 2], [3, 4]], [[5, 6], [7, 8]]]. Найдите сумму элементов этого массива. Массив, конечно же, может быть произвольным.
+
+console.log("Задание 2");
+
+console.log("Способ 1 - цикл for");
+
+const massiv = [[[1, 2], [3, 4]], [[5, 6], [7, 8]]];
+let sum = 0;
+for (let m = 0; m < massiv.length; m ++){
+   for (let n = 0; n < massiv[m].length; n++) {
+      for (let p = 0; p < massiv[m][n].length; p++){
+         sum += massiv[m][n][p];
+      }
+   }
+}
+
+console.log("Способ 2 - функция");
+
+function arraySum(item) {
+
+}
+
+
+/*var massiv = [[[1, 2], [3, 4]], [[5, 6], [7, 8]]];
+var sum = 0;
+function sumItems(item) {
+   sum += item;
+   return sum;
+
+}
+
+console.log (sum);*/
+
+var arr = [[[1, 2], [3, 4]], [[5, 6], [7, 8]]];
+var summ = 0;
+for (var i = 0; i < arr.length; i++) {
+   for (var j = 0; j < arr[i].length; j++) {
+      for (var k = 0; k < arr[i][j].length; k++) {
+         summ += arr[i][j][k];
+         }
+   }
+}
+console.log(summ);
+
+// Задание 4
+// Сделайте функцию isEven() (even - это четный), которая параметром принимает целое число и проверяет: четное оно или нет. Если четное - пусть функция возвращает true, если нечетное - false.
+
+console.log("Задание 4");
+var i=0; i++;
+function isEven(i){
+    if(i>0 && i%2 === 0){
+        return true;
+    }
+    
+    else
+        {return false;
+}
+}
+console.log(isEven(3));
+console.log(isEven(4));
+
+
+
+// Задание 5
+// Дан массив с целыми числами. Создайте из него новый массив, где останутся лежать только четные из этих чисел. Для этого используйте вспомогательную функцию isEven из предыдущей задачи.
+
+console.log("Задание 5");
+
+var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+var arr1 = [];
+var i;
+for (i=1; i <= arr.length; i++) {
+   if(isEven(arr[i])) {
+      arr1.push(arr[i]);
+   }
+
+}
+console.log(arr1);
+
+function arrayFill(arr, i)
+{
+   for (i=1; i%2 === 0; i++) {
+      arr1.push(arr[i]);
+   }
+   
+   return arr1;
+}
+
+console.log(arr1);
+
+
+/* с помощью map и forEach*/
+// let arr3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+
+
+// let arr4 = arr3.map((number, index) => number%2 === 0 ? {arr3.push(number)});
+// console.log(arr4);
+
+
+// const arr = [4,7,9,1,5,3,6];
+// arr.forEach((number) => number);
+// const arr2 = arr.map((number, index) => number%2 === 0 ? number/2 : number*2 );
+
+
+
+// Задание 6
+// Сделайте функцию getDivisors, которая параметром принимает число и возвращает массив его делителей (чисел, на которое делится данное число).
+
+/*Этот код работает*/
+
+console.log("Задание 6");
+var i;
+var k;
+var arr=[];
+
+function getDivisors(i) {
+   for(k = 1; k <= i; k++)
+      if(i%k===0) arr.push(k);
+   return arr;
+}
+console.log(getDivisors(12));
+
+/*Этот код почему-то не работает*/
+/*
+var i;
+var k;
+var arr=[];
+
+function getDivisors(i){
+   if(i>=k && i%k === 0) {
+     arr.push(k);
+     return arr;
+   }
+}
+console.log(getDivisors(12));*/
+
+
+
+  	</script>
+	
+</body>
+</html>

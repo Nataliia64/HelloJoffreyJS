@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>IfElseModalWindows</title>
+</head>
+<body>
+
+	<script>
+	// ------------------------------------------Лекция 8. If, If else и модальные окна, текст заданий закомментирован //, мой код /*   */------
+
+   //Task #1
+   //var students = ["Сергей", "Матвей", "Лейла", "Алина",  "Иоган"];
+
+// Напишите условие, которое проверяет, если количество элементов в массиве больше или  равно 3, то выводится сообщение о том, что это большой массив, в котором как минимум 3  элемента.
+// А иначе, выведите на экран сообщение о том, что это маленький массив, в  котором менее 3-х элементов.
+
+
+  /* 
+  document.write("Лекция 8 If, If else и модальные окна" + "<br\/>" + "<br\/>" + "Task #1" + "<br\/>" + "<br\/>" );
+
+   var students = ["Сергей", "Матвей", "Лейла", "Алина",  "Иоган"];
+   if(students.length >= 3) {
+      document.write("a big massive with 3 or more elements"+ "<br\/>" + "<br\/>");
+   } else {
+      document.write("a small massive with less than 3 elements" + "<br\/>" + "<br\/>");
+   }
+
+  document.write(students.length < 3 ? "a small massive with less than 3 elements"+ "<br\/>" + "<br\/>" : "a big massive with 3 or more elements"+ "<br\/>" + "<br\/>");
+*/
+
+//Task #1a
+
+//    Написать код, который бы спрашивал у пользователя  сколько ему лет.
+
+// Вы должны  проанализировать полученный ответ, и если человеку больше 20 лет, то вам нужно вывести на экран  фразу "Вы уже взрослый человек!", а если меньше 20 или равно 20, то вывести "Вы еще молоды, у Вас  все впереди!".
+
+/*document.write("Task #1a"+ "<br\/>" + "<br\/>");
+var age = prompt("Сколько вам лет?","");
+console.log(typeof age);
+if (age <= 20){
+    document.write("Вы еще молоды, у Вас  все впереди!" + "<br\/>" + "<br\/>");
+}
+else {
+    document.write("Вы уже взрослый человек!" + "<br\/>" + "<br\/>");
+}*/
+
+//Task #2
+// У Вас есть массив:  
+
+// var students = ["Дмитрий", "Алексей", "Петр", "Виктор"];
+
+// Вам нужно написать условие, что, если длина этого массива равна 4 и последним элементом является "Виктор", то вывести на экран сообщение "Этот массив мне подходит", а иначе вывести на экран, что массив вам не подходит.
+/*
+document.write("Task #2"+ "<br\/>" + "<br\/>");
+
+var students = ["Дмитрий", "Алексей", "Петр", "Виктор"];
+if(students.length === 4 && students[3] === "Виктор"){
+   document.write("Этот массив мне подходит" + "<br\/>" + "<br\/>");
+}
+else {
+   document.write("Этот массив мне не подходит" + "<br\/>" + "<br\/>");
+}
+*/
+
+//Task #3
+// Напишите множественное условие для действий при различных сигналах светофора.
+// Если сигнал красный, то надо стоять, иначе, если желтый, то надо приготовиться, а иначе, можно идти.
+
+// используя ‘?’
+ //THIS TASK IS STILL NOT SOLVED
+
+/*
+document.write("Task #3" + "<br\/>" + "<br\/>");
+
+var trafficlight = ["red", "yellow", "green", "off"];
+
+var message = ["stop", "prepare", "go", "светофор не работает"];
+
+(trafficlight[0]) ? message[0] : (trafficlight[1]) ? message[1] : (trafficlight[2]) ? message[2] : message[3];
+
+
+document.write(trafficlight[0] + " - " + message[0] + "<br\/" + trafficlight[1] + " - " + message[1] + "<br\/" + trafficlight[2] + " - " + message[2] + "<br\/" + trafficlight[3] + " - " + message[3] + "<br\/");
+
+
+//console.log(trafficlight[0] + " " + message + "<br\/>" + trafficlight[1] + " " + message + "<br\/>" + trafficlight[2] + " " + message + "<br\/>" +trafficlight[3] + " " + message + "<br\/>" + "<br\/>" + "<br\/>");
+
+*/
+
+
+//Task #4
+// Перепишите if..else с использованием нескольких операторов '?'.
+// Для читаемости – оформляйте код в несколько строк.
+
+// var message;
+
+// if (login == 'Вася') {
+//   message = 'Привет';
+// } else if (login == 'Директор') {
+//   message = 'Здравствуйте';
+// } else if (login == '') {
+//   message = 'Нет логина';
+// } else {
+//   message = '';
+// }
+
+/*
+document.write("Task #4" + "<br\/>" + "<br\/>");
+
+ var login = prompt ("enter your login");
+ var message;
+ (login === "Vasya") ? document.write(message = "Privet! " + "<br\/>" + "<br\/>") :
+ (login === "Director") ? document.write(message = "Zdravstvuite! " + "<br\/>" + "<br\/>") :
+ (login === " ") ? document.write(message = "this is not a login" + "<br\/>" + "<br\/>"):
+ " ";*/
+     
+
+//Task #5
+
+//    Напишите код, который будет спрашивать логин (prompt).
+
+// Если посетитель вводит «Админ», то спрашивать пароль, если нажал отмена (escape) – выводить «Вход отменён», если вводит что-то другое – «Я вас не знаю».
+
+// Пароль проверять так. Если введен пароль «Чёрный Властелин», то выводить «Добро пожаловать!», иначе – «Пароль неверен», при отмене – «Вход отменён».
+
+// Блок-схема:
+
+
+/*document.write("Task #5" + "<br\/>" + "<br\/>");  */
+
+
+  
+// Вариант 1 с знаком ?, не получился почему-то
+/*
+  var UserLogin=prompt("Кто пришел?","");
+  (UserLogin===null) ? prompt("Вход отменён") :
+  
+  (UserLogin==="Админ") ? 
+
+   
+     { 
+     var UserPassword =prompt("Введите Ваш пароль");
+       (UserPassword===null) ? prompt("Вход отменен") :
+     (UserPassword==="Чёрный Властелин") ? alert("Добро пожаловать!") :
+       prompt("Пароль неверен"); 
+       }
+     :
+
+    prompt("Я вас не знаю");
+*/
+    
+
+// Вариант 2 с if, получился, но если первый раз всместо Админ вводишь Собака, все срабатывает,т.е. пишет Я вас не знаю , но когда на том же месте повторно пишешь Собака, уже пропускает спокойно, ничего больше не спрашивая. Наверное, думает, что уже с собакой познакомился :)
+/*
+var UserLogin=prompt("Кто пришел?","");
+ if(UserLogin===null) prompt("Вход отменен");
+
+ 
+     else if (UserLogin==="Админ")
+     {
+      var UserPassword=prompt("Введите Ваш пароль");
+      if(UserPassword==="Черный Властелин") alert("Добро пожаловать!");
+      else if (UserPassword===null) prompt("Вход отменен");
+      else prompt("Пароль неверен!");
+     }
+
+     else prompt("Я вас не знаю!");*/
+
+//Task #6
+// Используя конструкцию ?, напишите код, который будет спрашивать: «Каково «официальное» название JavaScript?».
+
+// Если посетитель вводит «ECMAScript», то выводить «Верно!», если что-то другое – выводить «Не знаете? «ECMAScript»!».
+
+// Блок-схема:
+
+/*
+document.write("Task #6" + "<br\/>" + "<br\/>"); 
+
+var Question = prompt("Каково «официальное» название JavaScript?","");
+(Question==="ECMAScript") ? alert("Верно!") :
+       alert("Не знаете? «ECMAScript»!"); 
+*/
+
+//Task #7
+
+// Перепишите if с использованием оператора '?':
+
+// a=1;
+// b=8;
+
+// if (a + b < 4) {
+//   result = 'Мало';
+// } else {
+//   result = 'Много';
+// }
+// document.write(result);
+
+/*
+document.write("Task #7" + "<br\/>" + "<br\/>"); 
+var a = 1;
+var b = 8;
+(a + b < 4) ? result ="Мало" :
+result ="Много";
+document.write(result + "<br\/>" + "<br\/>");
+*/	
+
+	</script>
+	
+</body>
+</html>

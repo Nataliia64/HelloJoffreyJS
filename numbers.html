@@ -91,13 +91,13 @@ var myArray = ["100 попугаев", "201 рубль", "624 доллара", "
 
 // способ 4 - - фффуууххх наконец-то!!
 
-// function numberize(massive){
-// 	for (i = 0; i < massive.length; i++){
-// 	massive[i] = parseInt(massive[i]);
-// 	console.log(massive[i]);
-// 	}
-// }
-// numberize(myArray);
+function numberize(massive){
+	for (i = 0; i < massive.length; i++){
+	massive[i] = parseInt(massive[i]);
+	console.log(massive[i]);
+	}
+}
+numberize(myArray);
 
 
 // способ 5 - тоже работает!! но не сама додумалась, где-то списала, не помню где
@@ -185,28 +185,28 @@ const numberArray = [34.82, 12.90, 17.01, 78.51];
 // }
 // okruglit(numberArray, method);
 
-const method = [Math.round, Math.ceil, Math.floor];
+const method1 = [Math.round, Math.ceil, Math.floor];
 
-// function okruglit1(massiv, method){
+// function okruglit1(massiv, method1){
 // 	for (i = 0; i < massiv.length; i++){
-// 		massiv[i] = method[0](massiv[i]);
+// 		massiv[i] = method1[0](massiv[i]);
 // 		console.log(massiv[i]);
 // 	}
 // }
 // okruglit1(numberArray, method);
 
-function changeMassiv(massiv, method, i, k){
+function changeMassiv(massiv, method1, i, k){
 	for (i = 0; i < massiv.length; i++){
-		for (k = 0; k < method.length; k++){
-			massiv[i] = method[k](massiv[i]);
+		for (k = 0; k < method1.length; k++){
+			massiv[i] = method1[k](massiv[i]);
 			console.log (massiv[i]);
-			// console.log (massiv[i] = method[0](massiv[i]));
-			// console.log (massiv[i] = method[1](massiv[i]));
+			// console.log (massiv[i] = method1[0](massiv[i]));
+			// console.log (massiv[i] = method1[1](massiv[i]));
 			
 		}
 	}
 }
-changeMassiv(numberArray, method, 0, 2);
+changeMassiv(numberArray, method1, 0, 2);
 
 
 console.log("Задача на числа №6");
@@ -252,6 +252,16 @@ function fillRandom(arr, count, from, to){
 console.log(fillRandom(randomArr, 7, 1, 100));
 
 //попробуем метод fill: 
+
+// https://tproger.ru/articles/problems/
+
+//Напишите метод, находящий максимальное из двух чисел, не используя операторы if-else или любые другие операторы сравнения.
+
+//Напишите функцию суммирования двух целых чисел без использования «+» и других арифметических операторов.
+
+//Напишите методы для умножения, вычитания и деления целых чисел, используя из арифметических операций только оператор суммирования. Язык реализации не важен, об оптимизации скорости работы и использования памяти также можете не особо беспокоиться. Главное, что можно использовать только сложение. В подобных задачах полезно вспомнить суть математических операций.
+
+// Ответ
 
 
 

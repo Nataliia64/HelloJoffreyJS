@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Functions</title>
+</head>
+<body>
+	<script>
+		// Задание 4
+// Сделайте функцию isEven() (even - это четный), которая параметром принимает целое число и проверяет: четное оно или нет. Если четное - пусть функция возвращает true, если нечетное - false.
+
+console.log("Задание 4");
+var i=0; i++;
+function isEven(i){
+    if(i>0 && i%2 === 0){
+        return true;
+    }
+    
+    else
+        {return false;
+}
+}
+console.log(isEven(3));
+console.log(isEven(4));
+
+
+
+// Задание 5
+// Дан массив с целыми числами. Создайте из него новый массив, где останутся лежать только четные из этих чисел. Для этого используйте вспомогательную функцию isEven из предыдущей задачи.
+
+console.log("Задание 5");
+
+var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+var arr1 = [];
+var i;
+for (i=1; i <= arr.length; i++) {
+   if(isEven(arr[i])) {
+      arr1.push(arr[i]);
+   }
+
+}
+console.log(arr1);
+
+function arrayFill(arr, i)
+{
+   for (i=1; i%2 === 0; i++) {
+      arr1.push(arr[i]);
+   }
+   
+   return arr1;
+}
+
+console.log(arr1);
+
+// Задание 6
+// Сделайте функцию getDivisors, которая параметром принимает число и возвращает массив его делителей (чисел, на которое делится данное число).
+
+/*Этот код работает*/
+
+console.log("Задание 6");
+var i;
+var k;
+var arr=[];
+
+function getDivisors(i) {
+   for(k = 1; k <= i; k++)
+      if(i%k===0) arr.push(k);
+   return arr;
+}
+console.log(getDivisors(12));
+
+/*Этот код почему-то не работает*/
+/*
+var i;
+var k;
+var arr=[];
+
+function getDivisors(i){
+   if(i>=k && i%k === 0) {
+     arr.push(k);
+     return arr;
+   }
+}
+console.log(getDivisors(12));*/
+
+// Задание 3
+// Сделайте функцию isNumberInRange, которая параметром принимает число и проверяет, что оно больше нуля и меньше 10. Если это так - пусть функция возвращает true, если не так - false.
+console.log("Задание 3");
+
+var i;
+function isNumberInRange(i) {
+   if(i>0 && i<10)
+      return true;
+   else return false;
+}
+
+console.log(isNumberInRange(2));
+console.log(isNumberInRange(-2));
+console.log(isNumberInRange(22));
+
+
+
+// Задание 4
+// Сделайте функцию isEven() (even - это четный), которая параметром принимает целое число и проверяет: четное оно или нет. Если четное - пусть функция возвращает true, если нечетное - false.
+
+console.log("Задание 4");
+var i=0; i++;
+function isEven(i){
+    if(i>0 && i%2 === 0){
+        return true;
+    }
+    
+    else
+        {return false;
+}
+}
+console.log(isEven(3));
+console.log(isEven(4));
+
+
+
+// Задание 5
+// Дан массив с целыми числами. Создайте из него новый массив, где останутся лежать только четные из этих чисел. Для этого используйте вспомогательную функцию isEven из предыдущей задачи.
+
+console.log("Задание 5");
+
+var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+var arr1 = [];
+var i;
+for (i=1; i <= arr.length; i++) {
+   if(isEven(arr[i])) {
+      arr1.push(arr[i]);
+   }
+
+}
+console.log(arr1);
+
+function arrayFill(arr, i)
+{
+   for (i=1; i%2 === 0; i++) {
+      arr1.push(arr[i]);
+   }
+   
+   return arr1;
+}
+
+console.log(arr1);
+
+
+/* с помощью map и forEach*/
+// let arr3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+
+
+// let arr4 = arr3.map((number, index) => number%2 === 0 ? {arr3.push(number)});
+// console.log(arr4);
+
+
+// const arr = [4,7,9,1,5,3,6];
+// arr.forEach((number) => number);
+// const arr2 = arr.map((number, index) => number%2 === 0 ? number/2 : number*2 );
+
+
+
+// Задание 6
+// Сделайте функцию getDivisors, которая параметром принимает число и возвращает массив его делителей (чисел, на которое делится данное число).
+
+/*Этот код работает*/
+
+console.log("Задание 6");
+var i;
+var k;
+var arr=[];
+
+function getDivisors(i) {
+   for(k = 1; k <= i; k++)
+      if(i%k===0) arr.push(k);
+   return arr;
+}
+console.log(getDivisors(12));
+
+/*Этот код почему-то не работает*/
+/*
+var i;
+var k;
+var arr=[];
+
+function getDivisors(i){
+   if(i>=k && i%k === 0) {
+     arr.push(k);
+     return arr;
+   }
+}
+console.log(getDivisors(12));*/
+
+
+
+// Задание 7
+// Создайте функцию, которая получает два параметра – число и степень числа. Используя ** внутри функции, возведите число в степень и выведите с помощью console.log.
+
+console.log("Задание 7");
+var num;
+var a;
+
+function getPower(num, a){
+     var power = num ** a;
+   return power;
+}
+console.log(getPower(3, 2));
+console.log(getPower(-3, 2));
+console.log(getPower(3, -2));
+console.log(getPower(0, 2));
+console.log(getPower(2, 0));
+
+
+// Задание 8
+// Функция принимает параметр - возраст пользователя. Если число больше 16 – то выводим «добро пожаловать», если меньше – “вы еще молоды”.
+
+console.log("Задание 8");
+var age = 0;
+function getAge(age) {
+   if(age >= 16)
+      return "добро пожаловать";
+   else
+      return "вы еще молоды";
+}
+
+console.log(getAge(5));
+console.log(getAge(25));
+
+
+// Задание 9
+// Модифицируйте предыдущий пример – учтите вариант, если пользователь не передал параметр в функцию. В таком случае выведите сообщение – “Введите возраст”. Реализуйте два вида проверки наличия аргумента – проверка на undefined и оператор ||.
+
+// Задание 10
+// Создайте функцию, которая считает длину массива и возвращает ее в виде числа. Массив в функцию передается как аргумент. Если аргумент не задан – выводится сообщение об ошибке.
+
+console.log("Задание 10");
+
+var arr = [];
+function getLength(arr) {
+   if(arr.length>=0)
+      return arr.length;
+   else
+      return "error";
+}
+console.log(getLength(arr = [1,2,2,3,3,3,4,4,4,4,5,5,5,5,5,6,6,6,6,6,6]));
+console.log(getLength(arr = []));
+console.log(getLength(arr));
+
+// Задание 11
+// Пользователь вводит числа. Если число больше 10, то функция возвращает квадрат числа, если меньше 7 – пишет, что число меньше 7. Если 8, 9 – то возвращает соответственно 7 или 8. Реализуйте решение с несколькими return.
+
+/*А что делать, если число равно 7 или число равно 10? Я написала эти случаи так же, как и для значений 8 и 9*/
+
+console.log("Задание 11");
+
+var i = 0;
+function makeSomething(i) {
+   if(i>10)
+      return (i ** 2); //также можно записать как (i *= i) или (i * i);
+   else if(i<7)
+      return "число меньше 7";
+   else 
+      return (i - 1);
+
+}
+
+console.log(makeSomething(100));
+console.log(makeSomething(2));
+console.log(makeSomething(0));
+console.log(makeSomething(-5));
+console.log(makeSomething(7));
+console.log(makeSomething(8));
+console.log(makeSomething(9));
+console.log(makeSomething(10));
+
+
+
+	</script>
+	
+</body>
+</html>
