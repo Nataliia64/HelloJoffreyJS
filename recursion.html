@@ -1,0 +1,183 @@
+!<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Recursion</title>
+</head>
+<body>
+
+	<script>
+//1) Спросить у пользователя натуральное число(n). 
+//2) Написать рекурсивную функцию которая будет выводить все от 1 до n.
+
+console.log("Задача на рекурсию");
+
+let n = 5;
+let ö = 1;
+
+function numbZ(n){
+	console.log(1);
+	
+	if (n===ö){
+		return;
+	};
+	console.log(ö);
+	ö++;
+	return numbZ(n);
+}
+
+numbZ(5);
+
+//1) Спросить у пользователя натуральное число(n). 
+//2) Написать рекурсивную функцию которая будет выводить все от 1 до n.
+console.log("Рекурсия - Задача 1 Vyvesty Nomer ot 1 do n - способ 1 - сама решила!!!!");
+function vyvedyNomer1(b){
+	let n=10;
+	console.log(b);
+	if (b>=n){
+		return;
+	}
+	else{
+		vyvedyNomer1(b+1);
+	}
+}
+vyvedyNomer1(1);
+
+console.log("Рекурсия - Задача 1 Vyvesty Nomer ot 1 do c - способ 2- сама решила!!!!");
+function vyvedyNomer2(c){
+	console.log(c);
+	if (c>=8){
+		return;
+	}
+	else{
+		vyvedyNomer2(c+1);
+	}
+
+}
+vyvedyNomer2(1);
+
+console.log("Рекурсия - Задача 1 Vyvesty Nomer ot 1 do d - способ 3 - списала решение см. ниже но не поняла как оно работает");
+
+function vyvedyNomer3(d){
+		if (d == 1){
+		return d;
+	}
+	else {
+		return vyvedyNomer3(d - 1) + "" + d;
+	}
+}
+console.log(vyvedyNomer3(5));
+
+
+
+console.log("Списала решение на https://habr.com/ru/post/275813/, вижу что гениальное, но не поняла. Поможете разобраться?");
+
+function showNumber (n) {
+	if (n == 1) {
+		return n;
+	}
+
+	else {
+		return showNumber(n - 1) + "" + n;
+	}
+}
+console.log(showNumber(7));
+
+
+console.log("Задача Count-down");
+
+function countdown(i) {
+  console.log(i)
+  if (i <= 1) {  // base case
+    return;  
+  } else {       // recursive case
+    countdown(i - 1);
+  }
+}
+countdown(9);    // This is the initial call to the function.
+
+
+console.log("Еще одна Задача на рекурсию");
+
+//Возведение числа в степень - итеративный способ, цикл for:
+
+function pow(x, n) {
+  let result = 1;
+
+  // умножаем result на x n раз в цикле
+
+  for (let i = 0; i < n; i++) {
+    result *= x;
+  }
+
+  return result;
+}
+
+console.log( pow(3, 2) ); 
+
+//Возведение числа в степень - с помощью рекурсии:
+
+function ыеуз(x, n) {
+  if (n == 1) {
+    return x;
+  } else {
+    return x * ыеуз(x, n - 1);
+  }
+}
+
+console.log(ыеуз(2, 3) );
+console.log(ыеуз(2, 2) );
+
+
+//Рекурсия - Задача 2
+//Напишите функцию которая будет спрашивать у пользователя число(n) и будет вычислять сумму чисел от 1 до n, например:
+//sumTo(1) = 1
+//sumTo(2) = 2 + 1 = 3
+//sumTo(3) = 3 + 2 + 1 = 6
+//sumTo(4) = 4 + 3 + 2 + 1 = 10
+//...
+//sumTo(100) = 100 + 99 + ... + 2 + 1 = 5050
+//Сделайте два варианта решения:
+//1.	С использованием цикла.
+//2.	Через рекурсию, т.к. sumTo(n) = n + sumTo(n-1) для n > 1.
+console.log("Рекурсия - Задача 2 вывести сумму чисел от 1 до n - способ 1 - сама решила!!!!");
+
+function sumTo1(d){
+		if (d == 1){
+		return d;
+	}
+	else {
+		return sumTo1(d - 1) + d;
+	}
+}
+console.log(sumTo1(5));
+
+
+console.log("Рекурсия - Задача 2 вывести сумму чисел от 1 до m с помощью цикла");
+
+function sumNumbers1(m){
+	let k=0; 
+			
+		for (let i=0; i<=m; i++){
+			k += i;
+		}
+		return k;
+	}
+console.log(sumNumbers1(10));
+
+console.log("Рекурсия - Задача 2 вывести сумму чисел от 1 до m с помощью функции");
+
+function sumNumbers2 (m){
+	return (1+m)*m/2;
+}
+console.log(sumNumbers2(10));
+
+
+
+
+
+
+	</script>
+
+</body>

@@ -297,6 +297,8 @@ var studentss = ["Илья","Greg", "Алина"];
 
 // Результатом функции должна быть (при необходимости) усеченная строка.
 
+// Кстати, есть такое свойство css - обрезка текста с многоточием или без, ПОСМОТРЕТЬ СТАТЬИ ОТ ЛЕНЫ!!!!!!! 
+
 
 console.log("Методы и свойства Задача 7");
 
@@ -350,11 +352,13 @@ console.log(changeStroka(stroka));
 
 //  сама пыталась решить, без того чтобы преобразовывать строку в массив, чтобы все решить только методом строк, но не получилось блин
 
+// закомментированная строка в решении - НЕПРАВИЛЬНО!!!! Все равно надо использовать split.
+
 let line1 = "every word in this line starts with upper case";
-function makeUpper(lineN, i){
-    for(i = 0; i<lineN.length; i++){
-      	lineN[i] = lineN[lineN.indexOf(" ", i) + 1].toUpperCase();
-      		}
+function makeUpper(lineN){
+    for(let i = 0; i<lineN.length; i++){
+      	// lineN[i] = lineN[lineN.indexOf(" ", i) + 1].toUpperCase();
+    }
 	return console.log(lineN);
 }
 makeUpper(line1);
