@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Time Counter</title>
+</head>
+<body>
+
+ <script>
+
+ 	//Рекурсия - Задача 3
+
+	//1) Напишите функцию , которая последовательно выводит в консоль числа от 1 до 20, с интервалом между числами 100 мс. То есть, весь вывод должен занимать 2000 мс, в течение которых каждые 100 мс в консоли появляется очередное число. Функция должна использовать setInterval.
+	let a1 = 1;
+	let aN = 20;
+
+	let timerId1 = setInterval(() => console.log(a1++), 1000);
+	setTimeout(() => { clearInterval(timerId1); console.log('stop'); }, 20000);
+
+	//или (но не работает почему-то, ПОМОЖЕТЕ РАЗОБРАТЬСЯ?)
+	/*if(a1 === aN) {
+		clearInterval(timerId1); 
+	}*/
+
+	
+	//2) Сделайте то же самое, но с использованием рекурсивного setTimeout вместо setInterval.
+	//пример из конспекта лекция 13: Uncaught ReferenceError: func is not defined at run (time_counter.html:32)
+
+	/*console.log("пример из конспекта лекция 13 на рекурсивный setTimeout вместо setInterval:");
+	var i = 1;
+	setTimeout(function run() {
+  	func(i);
+  	setTimeout(run, 100);
+	}, 100);*/
+
+	
+
+	//Примеры из учебника:
+	// повторить с интервалом 2 секунды
+	//let timerId = setInterval(() => document.write('tick'), 2000);
+
+	// остановить вывод через 5 секунд
+	//setTimeout(() => { clearInterval(timerId); document.write('stop'); }, 5000);
+
+
+
+
+ 	//ЗАДАЧА: Сделать счетчик, который показывает, сколько дней, часов, минут и секунд осталось до 8 марта. Счетчик должен ИДТИ, секунды и минуты должны быть с 0 впереди. Сделать в отдельном html файле!!!! Желательно в виде часов (вспомнить верстку).
+
+	let now = new Date();
+	const myDay = new Date(2021, 2, 8);
+
+	document.write("Сегодня " + now + ", до " + myDay + " осталось: " + "<br\/>");
+
+
+	document.write("Способ 1 "+ "<br\/>");
+
+	function daysWillElapse(a, b){
+		return Math.floor((a - b)/(1000*60*60*24));
+	}
+	document.write("Дней: " + daysWillElapse(myDay, now) + "<br\/>");
+
+	function hoursWillElapse(a, b){
+		return Math.floor((a - b)%(1000*60*60*24)/(1000*60*60));
+	}
+	document.write("Часов: " + hoursWillElapse(myDay, now) + "<br\/>");
+
+	function minutesWillElapse(a, b){
+		return Math.floor((a - b)%(1000*60*60*24)%(1000*60*60)/(1000*60));
+	}
+	document.write("Минут: " + minutesWillElapse(myDay, now) + "<br\/>");
+
+	function secondsWillElapse(a, b){
+		return Math.floor((a - b)%(1000*60*60*24)%(1000*60*60)%(1000*60)/1000);
+	}
+	document.write("Секунд: " + secondsWillElapse(myDay, now) + "<br\/>");
+
+	
+
+	/*document.write("Days will elapse " + timeWillElapse(myDay, now) + "<br\/>");*/
+
+	/*document.write("Способ 2 "+ "<br\/>");
+
+	function yearsWillElapse(a, b) {
+		return a.getFullYear() - b.getFullYear();
+	}
+	document.write("Years will elapse " + yearsWillElapse(myDay, now) + "<br\/>");
+
+	function monthsWillElapse(a, b) {
+		return a.getMonth() - b.getMonth();
+	}
+	document.write("Months will elapse " + monthsWillElapse(myDay, now) + "<br\/>");
+
+	function daysWillElapse(a, b) {
+		return a.getDate() - b.getDate();
+	}
+	document.write("Days will elapse " + daysWillElapse(myDay, now) + "<br\/>");
+	
+	function hoursWillElapse(a, b) {
+		return a.getHours() - b.getHours();
+	}
+	document.write("Hours will elapse " + hoursWillElapse(myDay, now) + "<br\/>");*/
+
+
+
+        
+        /*hours:  date2.getHours() - date1.getHours()*/
+
+	//Метод setTimeout позволяет вызвать функцию один раз через определённый интервал времени.
+	/*function sayHi() {
+  	document.write('Привет');
+	}
+
+	setTimeout(sayHi, 3000);*/
+
+	/*function sayHi(phrase, who) {
+  	document.write( phrase + ', ' + who );
+	}
+
+	setTimeout(sayHi, 1000, "Привет", "Джон"); // Привет, Джон*/
+
+	//Метод setInterval позволяет вызывать функцию регулярно, повторяя вызов через определённый интервал времени.
+
+	// повторить с интервалом 2 секунды
+	//let timerId = setInterval(() => document.write('tick'), 2000);
+
+	// остановить вывод через 5 секунд
+	//setTimeout(() => { clearInterval(timerId); document.write('stop'); }, 5000);
+
+
+ 	
+
+ </script>
+
+</body>

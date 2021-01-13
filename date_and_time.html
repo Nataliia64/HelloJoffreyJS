@@ -7,15 +7,42 @@
 </head>
 <body>
 
-	<script>
+ <script>
 		//Задача 1
 //Ваша задача, используя методы объекта date, вывести на экран время в формате: час:минута:секунда (пример: 14:23:11). При этом, если секунды и минуты попадают в интервал от 0 до 10, они должны выводиться с нулем впереди.т.е. вместо 18:7:3 у Вас должно выводиться 18:07:03
 
-		/*let now = new Date();
-		alert( now ); 
+		let now = new Date();
+		/*let myHours = now.getHours();
+		let myMinutes = now.getMinutes();
+		let mySeconds = now.getSeconds();
 
-		let moment = new Date(2021, 0, 1, 0, 0, 0, 0); 
-		alert(moment);*/
+		myHours = checkIfOneDigit(myHours);
+ 		myMinutes = checkIfOneDigit(myMinutes);
+ 		mySeconds = checkIfOneDigit(mySeconds);*/
+
+
+		//Упростим запись, сократим повторение переменных 2 раза
+
+		/*const myHours = checkIfOneDigit(now.getHours());
+		const myMinutes = checkIfOneDigit(now.getMinutes());
+		const mySeconds = checkIfOneDigit(now.getSeconds());*/
+
+		/*document.write(myHours + "\:" + myMinutes + "\:" + mySeconds + "<br\/>" + "<br\/>" );
+
+		function checkIfOneDigit(digit){
+			return digit <= 9 ? "0" + digit : digit;
+		}*/
+
+		//переделать функцию в стрелочную. стрелочные ф_ции пишутся ДО ТОГО как их использовать!!! Надо стрелочную ф-цию вынести в самое начало!!!
+
+		const checkIfOneDigit1 = digit1 => digit1 <= 9 ? "0" + digit1 : digit1;
+
+		let myHours1 = checkIfOneDigit1(now.getHours());
+		let myMinutes1 = checkIfOneDigit1(now.getMinutes());
+		let mySeconds1 = checkIfOneDigit1(now.getSeconds());
+
+		document.write(myHours1 + "\:" + myMinutes1 + "\:" + mySeconds1 + "<br\/>" + "<br\/>" );
+
 
 		//Задача 2
 //Написать функцию, которая выводит на экран дату, которая наступит через n дней от сегодняшней. n - количество дней, которое нужно запросить у пользователя при загрузке страницы. Это значение передаете в функцию в качестве параметра. При этом итоговую дату надо вывести в нормальном формате на русском языке. Например так (пример для ввода числа 79): 
@@ -27,36 +54,158 @@
 
 //При этом пользователь должен ввести число от 1 до 1000. Если он не попал в интервал или ввел не число, то надо вывести ошибку. Проверку можно осуществлять за пределами функции.
 
-//ПОКА ЧТО СИЖУ НАД ЭТОЙ ЗАДАЧЕЙ, ЕЩЕ НЕ РЕШИЛА
 
-let now = new Date();
-let numberDays = prompt("Введите количество дней","");
 
-let ourYear = 
+//let now = new Date();
+/*let numberDays = prompt("Введите количество дней","");
+
 
 function showDate(now, numberDays) {
   now.setDate(now.getDate() + numberDays);
   return now.getDate();
 }
-document.write(showDate(now, numberDays));
+document.write(showDate(now, numberDays));*/
+
+//Какой день месяца был много дней назад? Создайте функцию getDateAgo(date, days), возвращающую число, которое было days дней назад от даты date.
+//К примеру, если сегодня двадцатое число, то getDateAgo(new Date(), 1) вернёт девятнадцатое и getDateAgo(new Date(), 2) – восемнадцатое.
+//Функция должна надёжно работать при значении days=365 и больших значениях:
+
+/*let date = new Date(2015, 0, 2);
+
+alert( getDateAgo(date, 1) ); // 1, (1 Jan 2015)
+alert( getDateAgo(date, 2) ); // 31, (31 Dec 2014)
+alert( getDateAgo(date, 365) ); // 2, (2 Jan 2014)*/
+//P.S. Функция не должна изменять переданный ей объект date.
+
+/*let date = new Date(2015, 0, 2);
+
+function getDateAgo(date, days) {
+    let dateCopy = new Date(date);
+  
+    dateCopy.setDate(date.getDate() - days);
+    return dateCopy.getDate();
+  }
+
+document.write( getDateAgo(date, 1) + "<br\/>") // 1, (1 Jan 2015)
+document.write( getDateAgo(date, 2) + "<br\/>"); // 31, (31 Dec 2014)
+document.write( getDateAgo(date, 365) + "<br\/>"); // 2, (2 Jan 2014)*/
+
+//а теперь то же самое, но с прибавлением дней и с сегодняшней датой: РАБОТАЕТ
+
+/*let date1 = new Date();
+function getDateLater(date, days) {
+    let date1Copy = new Date(date1);
+  
+    date1Copy.setDate(date1.getDate() + days);
+    return date1Copy.getDate();
+  }
+document.write( getDateLater(date1, 1) + "<br\/>"); 
+document.write( getDateLater(date1, 27) + "<br\/>"); 
+document.write( getDateLater(date1, 93) + "<br\/>"); */
+
+//автоисправление даты, можно прибавлять и отнимать любое количество дней:
+
+/*let date = new Date();
+date.setDate(date.getDate());
+
+document.write( date ); */
+
+
+/*//теперь то же самое, но с месяцем:
+let date2 = new Date();
+function getMonthLater(date, months) {
+    let date2Copy = new Date(date2);
+  
+    date2Copy.setMonth(date2.getMonth() + months);
+    return date2Copy.getMonth();
+  }
+document.write( getMonthLater(date2, 5) + "<br\/>"); 
+document.write( getMonthLater(date2, 2) + "<br\/>"); 
+document.write( getMonthLater(date2, 13) + "<br\/>");
+
+//теперь то же самое, но с годом:
+let date3 = new Date();
+function getYearLater(date, years) {
+    let date3Copy = new Date(date3);
+  
+    date3Copy.setFullYear(date3.getFullYear() + years);
+    return date3Copy.getFullYear();
+  }
+document.write( getYearLater(date3, 5) + "<br\/>"); 
+document.write( getYearLater(date3, 2) + "<br\/>"); 
+document.write( getYearLater(date3, 13) + "<br\/>");
+
+//попробуем получить год, месяц и дату:
+
+let date4 = new Date();
+function getFullDateLater(date, days) {
+    let date4Copy = new Date(date4);
+  
+    date4Copy.setFullYear(date4.getFullYear() + days);
+    return date4Copy.getFullYear();
+  }
+document.write( getFullDateLater(date4, 5) + "<br\/>"); 
+document.write( getFullDateLater(date4, 2) + "<br\/>"); 
+document.write( getFullDateLater(date4, 13) + "<br\/>");*/
 
 //Покажите день недели: Напишите функцию getWeekDay(date), показывающую день недели в коротком формате: «ПН», «ВТ», «СР», «ЧТ», «ПТ», «СБ», «ВС».
 
 //Например:
 
-//let date = new Date(2012, 0, 3);  // 3 января 2012 года
-//alert( getWeekDay(date) );        // нужно вывести "ВТ"
+//let date5 = new Date(2012, 0, 3);  // 3 января 2012 года
+//alert( getWeekDay(date5) );        // нужно вывести "ВТ"
 
-function getWeekDay(date) {
+/*function getWeekDay(date5) {
   let days = ['ВС', 'ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ'];
 
-  return days[date.getDay()];
+  return days[date5.getDay()];
 }
 
-let date = new Date(2014, 0, 3); // 3 января 2014 года
-alert( getWeekDay(date) ); // ПТ
+let date6 = new Date(2021, 0, 4); // 4 января 2021 года
+//alert( getWeekDay(date) ); // ПН*/
+
+const date7 = new Date();
+let addDays = +prompt("Введите число дней", "");
+
+date7.setDate(date7.getDate() + addDays);
+document.write( date7 + "<br\/>" ); 
+
+document.write("Через " + addDays + " дней будет такая дата: " + "<br\/>" );
+
+function getWeekDayRussian(date) {
+  let daysRussian = ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"];
+  return daysRussian[date7.getDay()];
+}
+  document.write("День недели: " + getWeekDayRussian(date7) + "<br\/>");
+
+function getThatDate(date) {
+	return date7.getDate();
+}
+	document.write ("Число: " + getThatDate(date7) + "<br\/>");
+
+function getMonthRussian(date) {
+	let monthsRussian = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"];
+	return monthsRussian[date7.getMonth()];
+}
+   document.write("Месяц: " + getMonthRussian(date7) + "<br\/>");
+
+function getThatYear(date) {
+	return date7.getFullYear();
+}
+	document.write("Год: " + getThatYear(date7) + "<br\/>");
+
+//ЗАДАЧА: Сделать счетчик, который показывает, сколько дней, часов, минут и секунд осталось до 8 марта. Счетчик должен ИДТИ, секунды и минуты должны быть с 0 впереди. Сделать в отдельном html файле!!!! Желательно в виде часов (вспомнить верстку).
+
+let now1 = new Date();
+const myDay = new Date(2021, 2, 8);
+function timeElapsed(a, b){
+	return Math.round((a - b)/1000/60/60/24);
+}
+
+document.write("Time Elapsed " + timeElapsed(myDay, now1));
+   
 
 
-	</script>
+  </script> 
 
 </body>
